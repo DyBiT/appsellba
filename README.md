@@ -5,7 +5,7 @@ SELLBA is an android app for selling and buying of new/old baterys.
 - Java 8
 
 ## Build Config
-- Api 26
+- Api 28
 - Gradle: 7.2
 
 
