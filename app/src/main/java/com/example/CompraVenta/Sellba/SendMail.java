@@ -49,14 +49,14 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... params) {
         Properties props = new Properties();
-        //Configuring properties for gmail
-        //If you are not using gmail you may need to change the values
+        //Configuración de propiedades para email autómatico, solo funciona en GMAIL
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.socketFactory.port", "465");
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "465");
-        //Creating a new session
+        //Creamos la nueva sesion para conectar el correo con el que se enviarán los emails
+        //Creamos el Config.class para pasarle los parámetros cuenta y pw.
         session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
             //Authenticating the password
             protected PasswordAuthentication getPasswordAuthentication() {
