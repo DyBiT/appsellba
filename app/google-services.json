@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "374636905519",
+    "firebase_url": "https://sellba-v1-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sellba-v1",
+    "storage_bucket": "sellba-v1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374636905519:android:5029b1b66630652e72f2da",
+        "android_client_info": {
+          "package_name": "com.example.valarmorghulis.firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374636905519-qn073ltk7p9umeb9srt59afh9sahl89a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC5qoi1i75k-AVbBpxvef7Efg4k_dS0nU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374636905519-qn073ltk7p9umeb9srt59afh9sahl89a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

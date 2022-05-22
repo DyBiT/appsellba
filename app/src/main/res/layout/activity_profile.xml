@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".ProfileFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:background="@mipmap/ic_camera_round"
+        android:scaleType="centerCrop" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/oxanium"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/name_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/orbitron"
+        android:text="Nombre"
+        android:textColor="@color/colorAccent2"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextDisplayName"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@+id/name_tag"
+        android:autofillHints=""
+        android:fontFamily="@font/oxanium"
+        android:hint="Introduzca nombre"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorAccent2" />
+
+    <TextView
+        android:id="@+id/email_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_tag"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/orbitron"
+        android:text="Email"
+        android:textColor="@color/colorAccent2"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view_email"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_tag"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="28dp"
+        android:layout_toEndOf="@+id/email_tag"
+        android:fontFamily="@font/oxanium"
+        android:text="email_id"
+        android:textColor="@color/colorAccent2"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/textViewVerified"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextDisplayName"
+        android:layout_alignBottom="@+id/text_view_email"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="-2dp"
+        android:fontFamily="@font/oxanium"
+        android:shadowColor="#3322"
+        android:text="verificado?"
+        android:textColor="@color/colorAccent2"
+        android:textSize="13dp" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewVerified"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_button_solid"
+        android:backgroundTint="@color/blackish_blue"
+        android:fontFamily="@font/orbitron"
+        android:paddingLeft="55dp"
+        android:paddingRight="55dp"
+        android:text="GUARDAR"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+</RelativeLayout>

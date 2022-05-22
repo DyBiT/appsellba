@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">FirebaseAuth</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="don_t_have_account_sign_up">¿No tienes cuenta?\n Registrate</string>
+    <string name="login">CONECTARSE</string>
+    <string name="my_profile">Tu perfil</string>
+    <string name="sell">Mercado</string>
+    <string name="logout">Desconectar</string>
+    <string name="about">Sobre nosotros</string>
+    <string name="share">Compartir</string>
+    <string name="juggler">BIENVENIDO A SELLBA</string>"
+    <string name="navigation_drawer_open">Abrir navegación</string>
+    <string name="navigation_drawer_close">Cerrar navegacion</string>
+    <string name="coming_soon">Próximamente...</string>
+    <string name="home">Inicio</string>
+    <string name="product_name">Nombre de producto</string>
+    <string name="feedback">Comentarios</string>
+    <string name="Welcome_to_Juggler">BIENVENIDO A SELLBA</string>
+    <string name="intro">Una plataforma de Compra/Venta de nuevas y viejas baterías de distintos tipos de dispositivos  </string>
+    <string name="our_team">Nuestro equipo</string>
+    <string name="J">" Nombre :  José Pablo Fernández\n Email : DAM2B-07@IESJOVELLANOS.ORG  \n"</string>
+    <string name="G">" Nombre :  Gabriel Encinas\n Email : DAM2B-06@IESJOVELLANOS.ORG\n"</string>
+    <string name="D">" Nombre :  David Gutiérrez\n Email : DAM2B-09@IESJOVELLANOS.ORG\n"</string>
+    <string name="forgot_pass">¿Has olvidado tu contraseña?\n Recuperala</string>
+    <string name="go_back">Volver atrás</string>
+    <string name="reset_pass">Escribir contraseña nueva</string>
+</resources>
