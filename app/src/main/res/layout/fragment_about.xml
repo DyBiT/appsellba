@@ -11,6 +11,7 @@
     android:layout_marginEnd="0px"
     android:layout_marginRight="0px"
     android:layout_marginBottom="0px"
+    android:background="@drawable/fondo_3"
     android:fillViewport="true"
     app:layout_goneMarginBottom="0px"
     app:layout_goneMarginEnd="0px"
@@ -27,73 +28,84 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/akshat_text3"
+            android:id="@+id/akshat_text"
             android:layout_width="match_parent"
             android:layout_height="78dp"
             android:layout_below="@+id/team"
-            android:layout_marginTop="155dp"
-            android:text="@string/D"
-            android:textSize="20dp" />
+            android:layout_marginTop="30dp"
+            android:text="@string/J"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent2"/>
 
         <TextView
             android:id="@+id/akshat_text2"
             android:layout_width="match_parent"
             android:layout_height="78dp"
             android:layout_below="@+id/team"
-            android:layout_marginTop="77dp"
+            android:layout_marginTop="80dp"
             android:text="@string/G"
-            android:textSize="20dp" />
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent2"/>
+
+        <TextView
+            android:id="@+id/akshat_text3"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:layout_below="@+id/team"
+            android:layout_marginTop="130dp"
+            android:text="@string/D"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent2"/>
 
         <TextView
             android:id="@+id/purpose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:paddingLeft="5dp"
-            android:text="Descripcion"
+            android:text="¿Quienes somos?"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"/>
 
         <TextView
             android:id="@+id/purpose_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/purpose"
+            android:layout_margin="10dp"
             android:text="@string/intro"
-            android:textSize="20dp"
-            android:textStyle="normal" />
+            android:textSize="16dp"
+            android:textStyle="normal"
+            android:textColor="@color/colorAccent2"/>
 
         <TextView
             android:id="@+id/team"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/purpose_text"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:paddingLeft="5dp"
             android:text="Nuestro equipo"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/akshat_text"
-            android:layout_width="match_parent"
-            android:layout_height="78dp"
-            android:layout_below="@+id/team"
-            android:layout_marginTop="3dp"
-            android:text="@string/J"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"/>
 
         <ImageView
             android:id="@+id/akshat_image"
             android:layout_width="match_parent"
-            android:layout_height="222dp"
+            android:layout_height="230dp"
             android:layout_below="@+id/team"
             android:layout_alignParentEnd="true"
             android:layout_marginLeft="0px"
-            android:layout_marginTop="232dp"
+            android:layout_marginTop="200dp"
             android:layout_marginEnd="0dp"
             android:adjustViewBounds="false"
-            android:background="@drawable/logo_sellba_black"
+            android:background="@drawable/panel_sellba_transparente_black"
+            android:backgroundTint="@color/white"
             android:cropToPadding="false"
             android:paddingLeft="0px"
             android:paddingRight="0px" />

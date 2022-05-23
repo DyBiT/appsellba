@@ -54,10 +54,11 @@
         android:textAlignment="center" />
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="340dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="1dp"
         android:layout_gravity="center"
+        android:backgroundTint="@color/colorAccent2"
         android:background="@drawable/sellba_portada_transparente" />
 
 </LinearLayout>
