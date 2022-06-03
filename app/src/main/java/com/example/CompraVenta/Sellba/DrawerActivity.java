@@ -13,10 +13,11 @@ import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-
+/*Navigation Drawer Se trata de un panel lateral que contiene un menu de navegación de la APP permanece
+oculto en nuestra aplicación y lo desplazaremos pinchando en la barra superior o desplazando a la drch.*/
 public class DrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-//    private static int SPLASH_TIME_OUT = 4000;
+//private static int SPLASH_TIME_OUT = 4000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,9 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new HomeFragment()).commit();
     }
 
+    //PARA NAVEGAR POR EL MENU HEMOS DECIDIDO CREAR UN SWITCH QUE INTERECTAU EN UN MENU(NAV_MENU.XML)
+    //DENTRO DEL MENU CREAMOS LOS ITEMS LOS CUALES SE ASIGNARAN A SUS RESPECTIVAS ACTIVITYS/FRAGMENTS.XML
+    //CUANDO EL USUARIO HAGA CLICK SOBRE UN ITEM NOS LLEVARÁ A LA ACTIVITY/FRAGMENT CORRESPONDIENTE.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -51,7 +55,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
             case R.id.nav_sell:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new SellFragment()).commit();
                 break;
-
+            //EN EL CASO DE DESCONECTAR CERRAREMOS LA INSTANCIA DEL USUARIO MEDIANTE FIREBASE:
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
                 finish();
@@ -72,6 +76,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
         return true;
     }
 
+    //METODO PARA EL CUAL SI EL MENU ESTÁ DESPLEGADO AL PULSAR ATRÁS SE VUELVA A PLEGAR.
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {

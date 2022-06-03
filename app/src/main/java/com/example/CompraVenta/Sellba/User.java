@@ -3,15 +3,17 @@ package com.example.CompraVenta.Sellba;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.Exclude;
 
+//Creamos la clase usuario la cual con la ayuda de firebase y sus metodos predefinidos
+//podremos registarnos y logearnos.
 public class User {
     private String uName;
     private String mKey;
     private String uEmail;
     private String uToken;
     FirebaseAuth mAuth;
-
+   //Necesitamos un constructor vacio.
     public User() {
-        //Empty constructor needed
+
     }
 
     public User(String token) {

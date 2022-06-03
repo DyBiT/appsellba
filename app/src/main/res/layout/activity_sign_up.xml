@@ -80,7 +80,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="7dp"
                 android:background="@drawable/rounded_button_transparent"
-                android:text="Inicia sesion"
+                android:text="Registrar"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent2" />
 

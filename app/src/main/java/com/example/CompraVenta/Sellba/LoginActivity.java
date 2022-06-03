@@ -16,13 +16,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-
+/*ACTIVITY PARA EL LOGIN UTILIZANDO FIREBASE*/
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
 
     private FirebaseAuth mAuth;
     EditText editTextEmail;
     TextInputEditText editTextPassword;
+
+    //PROGRESSBAR CUANDO INICIAMOS SESION NOS LA MUESTRA A MODO DE PROCESO DE CARGA.
     ProgressBar progressBar;
 
     @Override
@@ -94,14 +96,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        /*String specialChars = "(.*[,~,!,@,#,$,%,^,&,*,(,),-,_,=,+,[,{,],},|,;,:,<,>,/,?].*$)";
-        if (!password.matches(specialChars ))
-        {
-            editTextPassword.setError("Password should contain at least one number, one lowercase letter, one uppercase letter, and one special character.");
-            editTextPassword.requestFocus();
-            return;
-        }*/
-
         progressBar.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -142,19 +136,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
+        //CREAMOS UN SWITCH Y SEGÚN QUE OPCIÓN ELIGA EL USUARIO:
         switch(view.getId()){
-
+        //SI EL USUARIO PRESIONA "NO TIENES CUENTA, REGISTRARSE" CONDUNCIDRÁ A SIGNUPACTIVITY
             case R.id.textViewSignup:
                 Intent intentSignup = new Intent(this,SignUpActivity.class);
                 intentSignup.addFlags(intentSignup.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intentSignup);
                 finish();
                 break;
-
+            //SI EL USUARIO PRESIONA LOGIN
+            //EL SISTEMA COMPROBARÁ LOS DATOS Y SI SON CORRECTOS SE LOGEARÁ
             case R.id.buttonLogin:
                 userLogin();
                 break;
-
+            //SI EL USUARIO PRESIONA EN CONTRASEÑA OLVIDADA
+            //EL SISTEMA LE MANDARÁ A RESETPASSACTIVITY.
             case R.id.textView_forgotPass:
                 Intent intentResetPass = new Intent(this,ResetPassActivity.class);
                 intentResetPass.addFlags(intentResetPass.FLAG_ACTIVITY_CLEAR_TOP);

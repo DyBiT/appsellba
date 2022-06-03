@@ -16,11 +16,16 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+/*ACTIVITY PARA RESETEAR LA CONTRASEÑA A TRAVÉS DE FIREBASE.
+
+COMO ADMINISTRADORES DEBIDO A LA PRIVACIDAD NO PODEMOS VER NI ADMINISTRAR LAS CONTRASEÑAS
+DE LOS USUARIOS, ES EL PROPIO FIREBASE EL QUE GESTIONA ESTE APARTARTADO, GESTIONANDOLO DESDE
+LOS EMAILS PREDEFINIDOS ENVIADOS POR FIREBASE
+*/
 public class ResetPassActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
     EditText editTextEmail;
-    TextInputEditText editTextPassword;
     ProgressBar progressBar;
     private String mEmail;
 
@@ -38,7 +43,7 @@ public class ResetPassActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.textViewBack).setOnClickListener(this);
 
     }
-
+    //COMPROVACIÓN DEL EMAIL.
     private void passReset(){
         mEmail = editTextEmail.getText().toString().trim();
         if(mEmail.isEmpty()){
@@ -46,20 +51,21 @@ public class ResetPassActivity extends AppCompatActivity implements View.OnClick
             editTextEmail.requestFocus();
             return;
         }
-
+        //COMPROVACIÓN DE LA CONTRASEÑA
         if(!Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()){
             editTextEmail.setError("Introduzca unn email válido");
             editTextEmail.requestFocus();
             return;
         }
         progressBar.setVisibility(View.VISIBLE);
+        //MÉTODO FIREBASE PARA RESETEAR LA CONTRASEÑA A TRAVES DE QUE EL USUARIO INTRODUZCA EL MAIL
         mAuth.getInstance().sendPasswordResetEmail(mEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     editTextEmail.setText("");
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(ResetPassActivity.this, "Enlace de restablecimiento de contraseña enviado a su correo electrónico. Por favor revise la bandeja de su email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetPassActivity.this, "Enlace de restablecimiento de contraseña enviado a su correo electrónico. Por favor revise la bandeja o spam de su email", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     progressBar.setVisibility(View.GONE);
@@ -82,11 +88,12 @@ public class ResetPassActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-
+    //CUANDO PULSAMOS EL BOTON 'GENERAR NUEVA CONTRASEÑA' NOS EJECUTA EL METODO PARA ENVIARLA POR EMAIL
             case R.id.buttonReset:
                 passReset();
                 break;
 
+                //VUELVE A LA ACTIVIDAD DEL LOGIN
             case R.id.textViewBack:
                 Intent intentLogin = new Intent(this,LoginActivity.class);
                 intentLogin.addFlags(intentLogin.FLAG_ACTIVITY_CLEAR_TOP);

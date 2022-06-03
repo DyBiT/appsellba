@@ -42,7 +42,6 @@ public class BuyFragment extends Fragment {
     private Button button_make_offer;
     private Button button_message;
     private Button button_delete;
-    boolean mItemClicked = false;
     private String sName;
     private String sEmail;
     private String pName;
@@ -50,28 +49,15 @@ public class BuyFragment extends Fragment {
     private String bEmail;
     private int position;
     private String key;
-    int imagePosition;
-    String stringImageUri;
     FirebaseAuth mAuth;
     DatabaseReference mDatabaseRef;
     private FirebaseStorage mStorage;
     private ValueEventListener mDBListener;
-    DatabaseReference userDatabase;
-    private List<User> mUser;
     private List<Upload> mUploads;
 
     @Override
     public void onStart() {
         super.onStart();
-        NetworkConnection networkConnection = new NetworkConnection();
-        if (networkConnection.isConnectedToInternet(getActivity())
-                || networkConnection.isConnectedToMobileNetwork(getActivity())
-                || networkConnection.isConnectedToWifi(getActivity())) {
-
-        } else {
-            networkConnection.showNoInternetAvailableErrorDialog(getActivity());
-            return;
-        }
         String testEmail = mAuth.getInstance().getCurrentUser().getEmail();
         if (testEmail.equals(sEmail)) {
             button_make_offer.setVisibility(View.GONE);
@@ -111,7 +97,6 @@ public class BuyFragment extends Fragment {
             pName = bundle.getString("name");
             String pImageUrl = bundle.getString("imageUrl");
             String pPrice = bundle.getString("price");
-            //Bitmap bitmapImage = bundle.getParcelable("bitmapImage");
             sName = bundle.getString("userName");
             key = bundle.getString("key");
             String date = bundle.getString("date");
@@ -126,22 +111,12 @@ public class BuyFragment extends Fragment {
                 Desc_text.setVisibility(View.VISIBLE);
                 Desc_text.setText(desc);
             }
-
-            //pImage.setImageURI(Uri.parse(pImageUrl));
-//            if (bitmapImage != null)
-//                pImage.setImageBitmap(bitmapImage);
             if (pImageUrl != null) {
                 String photoUrl = pImageUrl;
                 Glide.with(this)
                         .load(photoUrl)
                         .into(pImage);
             }
-
-
-            /*DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-            DatabaseReference current = ref.child("fir-auth-431b5").child("user").child("token");
-            //User currentUser = mUser.get(email);
-*/
 
         }
 
@@ -161,10 +136,6 @@ public class BuyFragment extends Fragment {
                         .getSupportFragmentManager()
                         .beginTransaction().replace(R.id.frag_container, msgFragment)
                         .addToBackStack(null).commit();
-
-
-//                startActivity(new Intent(getActivity(), MsgActivity.class));
-//                getActivity().finish();
             }
         });
 
@@ -226,7 +197,7 @@ public class BuyFragment extends Fragment {
                 builder.setTitle("¡Alerta!");
                 builder.setMessage("Borrar es permanente. Estas seguro que quieres borrar?");
 
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         deleteProduct();

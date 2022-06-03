@@ -22,6 +22,14 @@ import com.google.firebase.storage.FirebaseStorage;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/* CLASE "PRINCIPAL"(provisional) LA CUAL NOS MUESTRA LA LISTA DE LOS ARTICULOS EN VENTA HACIENDO
+* REFERENCIA A LA BASE DE DATOS REALTIME DE FIREBASE EN EL APARTADO UPLOADS
+* PROGRAMAMOS UN MÉTODO CON mProgressCircle EL CUAL HEREDA DEL WIDGET.PROGRESSBAR QUE SE EJECUTARÁ
+* HASTA RECIBIR LOS DATOS, CUANDO EXISTA ALGÚN PROBLEMA Y NO SE PUEDAN OBTENER LOS DATOS
+* SE MANTENDRÁ FIJA LA PROGRESSBAR (BARRA DE CARGA) , EN EL LAYOUT fragment_home INSERTAREMOS UN
+* RECICLEDVIEW EL CUAL SE ENCARGARÁ DE ALOJAR LA LISTA DE LOS DATOS Y EL PROGRESS BAR MIENTRAS SE CARGAR
+* DICHOS DATOS*/
 public class HomeFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
@@ -43,8 +51,6 @@ public class HomeFragment extends Fragment {
         mUploads = new ArrayList<>();
         mAdapter = new ImageAdapter(getActivity(), mUploads);
         mRecyclerView.setAdapter(mAdapter);
-
-        //mAdapter.setOnItemClickListener(ImagesActivity.this);
 
         mStorage = FirebaseStorage.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");

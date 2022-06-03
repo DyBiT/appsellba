@@ -14,32 +14,41 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+
+/*
+--ESTA CLASE NOS PERMITE ADAPTAR LAS IMAGENES (EN EL ESPACIO DEFINIDO)
+ Y TEXTVIEWS DEFINIDAS POR LOS USUARIOS Y MOSTRARLAS/ORDENARLAS DONDE NOSOTROS INDIQUEMOS
+ PUDIENDO ASI DARLES FORMA Y FORMATO.*/
+
+
+
+/*/* https://developer.android.com/guide/topics/ui/layout/recyclerview?hl=es-419
+RecyclerView facilita que se muestren de manera eficiente grandes conjuntos de datos.
+la biblioteca RecyclerView creará los elementos de forma dinámica cuando se los necesite
+utilizaremos datos de tipo lista para mostrar las "Upload" de los productos*/
+
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
     private Context mContext;
     private List<Upload> mUploads;
 
-
+    //CONSTRUCTOR
     public ImageAdapter(Context context, List<Upload> uploads) {
         mContext = context;
         mUploads = uploads;
-        NetworkConnection networkConnection = new NetworkConnection();
-        if (networkConnection.isConnectedToInternet(mContext)
-                || networkConnection.isConnectedToMobileNetwork(mContext)
-                || networkConnection.isConnectedToWifi(mContext)) {
-
-        } else {
-            networkConnection.showNoInternetAvailableErrorDialog(mContext);
-            return;
-        }
-
     }
 
+    //
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.image_item, parent, false);
         return new ImageViewHolder(v);
     }
 
+    //onBindViewHolder en vez de tener una lista, creamos un objeto uploadCurrent el cual poserá
+    //La posición en al que se encuentra, el nombre del producto actual y el precio.
+    //Con la librería picaso piccaso https://square.github.io/picasso/ transformamos las imagenes
+    //obtenidas desde el cloud de firebase(getImageUrl) y las ubica en "imageView",picaso nos
+    //permite dar párametros para ajustar al imagen y reducir su tamaño en memoria.
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position) {
         Upload uploadCurrent = mUploads.get(position);
@@ -53,6 +62,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 .into(holder.imageView);
     }
 
+    //Método para obtener el tamaño del conjunto de datos y determinar cuando no hay más "Uploads"
     @Override
     public int getItemCount() {
         return mUploads.size();
@@ -65,15 +75,19 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         public ImageViewHolder(View itemView) {
             super(itemView);
-
+            //DEFINIMOS LOS VIEWS DONDE SE MOSTRARAN LOS DATOS
             textViewName = itemView.findViewById(R.id.text_view_name);
             textViewPrice = itemView.findViewById(R.id.text_view_price);
             imageView = itemView.findViewById(R.id.image_view_upload);
-
             imageView.setOnClickListener(new View.OnClickListener() {
+                /*Cuando hagamos click sobre una imagen de la lista, nos creará un objeto de la clase
+                * BuyFragment la cual pasará los párametros de los datos correspondientes del artículo
+                * seleccionado de la lista*/
                 @Override
                 public void onClick(View v) {
-
+                    //Utilizaremos Bundle para almacenar los datos correspondientes y enviarlos a el
+                    //fragment correspondiente "BuyFragment", le pasamos la posicion, nombre, precio
+                    //la imagen a traves de cloud de firebase (getImageUrl).
                     BuyFragment buyFragment = new BuyFragment();
                     Bundle bundle = new Bundle();
                     int position = getAdapterPosition();
@@ -92,13 +106,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                     bundle.putString("desc", current.getDesc());
                     bundle.putString("email", current.getEmail());
                     bundle.putString("key", current.getKey());
-                    /*if (((BitmapDrawable) imageView.getDrawable()).getBitmap() != null)
-                        bundle.putParcelable("bitmapImage", ((BitmapDrawable) imageView.getDrawable()).getBitmap());
-                    else
-                        bundle.putParcelable("bitmapImage", null);*/
                     buyFragment.setArguments(bundle);
 
-
+                    //ENVIAMOS LOS DATOS Y LOS REMPLAZAMOS EN LA POSICION QUE OCUPA FRAG_CONTAINER
+                    //EN EL OBJETO buyFragment que hace referencia a la clase BuyFragment.
                     ((FragmentActivity) mContext)
                             .getSupportFragmentManager()
                             .beginTransaction().replace(R.id.frag_container, buyFragment)

@@ -14,12 +14,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class FeedbackFragment extends Fragment implements View.OnClickListener {
+/*FRAGMENT SOBRE COMENTARIOS(FEEDBACK)*/
 
+public class FeedbackFragment extends Fragment implements View.OnClickListener {
     private EditText editTextMessage;
     private Button buttonSend;
     private String Name;
     private String Email;
+
 
     @Nullable
     @Override
@@ -32,15 +34,17 @@ public class FeedbackFragment extends Fragment implements View.OnClickListener {
         Email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         return v;
     }
-
+    //MÉTODO PARA ENVIAR EL EMAIL, CREAMOS UN OBJETO DE LA CLASE SENDMAIL YA DEFINIDA Y LE PASAMOS
+    //LOS PARÁMETROS "email, subject, message".NOS MOSTRARÁ DESDE EL CORREO PREDEFINIDO DE SELLBACOMPANY@GMAIL.COM
+    //NUESTRO CORREO RECIBIRÁ EL COMENTARIO DEL USUARIO Y SU EMAIL CON UN DESPLIEGUE MUY RÁPIDO.
     private void sendEmail() {
         String email = "sellbacompany@gmail.com";
-        String subject = "[Comentarios] " + Name;
-        String message = editTextMessage.getText().toString().trim() + "\n\nEnviado por " + Email;
+        String subject = "[FEEDBACK] usuario " + Name;
+        String message = editTextMessage.getText().toString().trim() + "\n\nEnviado por "+Name+"." +"\nEmail del usuario: "+ Email;
         SendMail sm = new SendMail(getActivity(), email, subject, message);
         sm.execute();
     }
-
+    //COMPROVAMOS QUE EL MENSAJE NO ESTÉ VACIO.
     @Override
     public void onClick(View v) {
         if(editTextMessage.getText().toString().length() < 1){
@@ -48,6 +52,8 @@ public class FeedbackFragment extends Fragment implements View.OnClickListener {
             editTextMessage.requestFocus();
             return;
         }
+        //CUANDO ENVIAMOS EL MENSAJE DESPLEGAMOS UNA ALERTA CON UNA CABECERA, UN MENSAJE Y LA
+        //OPCION DE ENVIAR O CANCELAR
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Comentario");
         builder.setMessage("Gracias por tu comentario. ¡Es muy valioso para nosotros!");

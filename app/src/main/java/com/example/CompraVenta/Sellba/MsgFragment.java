@@ -13,6 +13,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+
+/*FRAGMENT QUE PERMITE LA COMUNICACIÓN ENTRE COMPRADOR Y VENDEDOR CON DOS OPCIONES *COMPRAR Y MENSAJE*
+* CON *MENSAJE AUTOMATIZADO POR EL SISTEMA SELLBA Y ENVIADOS DESDE EL EMAIL sellbacompany@gmail.com
+* -EL COMPRADOR RECIBIRÁ UN EMAIL DE CONFIRMACIÓN DE CONEXIÓN INDICANDO QUE LA COMUNICACIÓN CON
+* EL VENDEDOR SE HA REALIZADO CORRECTAMENTE ADJUNTANDO EL MENSAJE PREDETERMINADO CON EL NICKNAME
+* DEL VENDEDOR Y EL NOMBRE DEL PRODUCTO.
+* -EL VENDEDOR RECIBIRÁ UNA NOTIFICACION PREDETERMINADA DEL SISTEMA INDICANDO: SU NICKNAME,
+* EL NICKNAME DEL COMPRADOR Y EL NOMBRE DEL PRODUCTO EN EL QUE ESTÁ INTERESADO, TAMBIEN RECIBIRÁ
+* EL EMAIL POR SI QUIERE PONERSE EN CONTACTO CON EL DIRECTAMENTE
+*
+* CON *COMENTARIO EL COMPRADOR PUEDE ESCRIBIR EL MENSAJE PERSONALIZADO QUE DESEE AL VENDEDOR DEL PRODUCTO
+* EL VENDEDOR RECIBIRÁ EL EMAIL DEL MENSAJE PERSONALIZADO Y AUTOMATICO GENERADO POR SELLBA INDICANDO
+* EL NICKNAME DEL COMPRADOR Y SU CORREO ELECTRÓNICO.*/
+
 public class MsgFragment extends Fragment implements View.OnClickListener {
 
     private EditText editTextMessage;
@@ -43,16 +58,18 @@ public class MsgFragment extends Fragment implements View.OnClickListener {
 
         return v;
     }
-
+    //PASAMOS LOS PARÁMETROS REQUERIDOS PARA LA CLASE CREADA SENDMAIL.
     private void sendEmail() {
         String email = sEmail;
         String subject = "[SELLBA] Consulta sobre el producto " + pName;
         String autoMsg = "\n\nEsto es un email autogenerado por SELLBA. Por favor no responda a este correo.";
-        String message = editTextMessage.getText().toString().trim() + "\n\nenviado por: " + sName + "(" + sEmail + ")\n" + autoMsg;
+        String message = editTextMessage.getText().toString().trim() + "\n\nenviado por: " + bName + "(" + bEmail + ")\n" + autoMsg;
         SendMail sm = new SendMail(getActivity(), email, subject, message);
         sm.execute();
     }
 
+
+    //VERIFICACIÓN PARA QUE EL COMENTARIO NO PUEDA ESTAR VACIO.
     @Override
     public void onClick(View v) {
         if(editTextMessage.getText().toString().length() < 1){
@@ -60,10 +77,12 @@ public class MsgFragment extends Fragment implements View.OnClickListener {
             editTextMessage.requestFocus();
             return;
         }
+        //ALERTA DE QUE EL MENSAJE SE HA ENVIADO CORRECTAMENTE
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Mensaje");
+        builder.setTitle("Mensaje enviado");
         builder.setMessage("El mensaje se va a enviar por email al propietario de este producto");
 
+        //CUANDO PULSEMOS A ENVIAR EL USUARIO PODRÁ CONFIRMAR O DESCARTAR
         builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

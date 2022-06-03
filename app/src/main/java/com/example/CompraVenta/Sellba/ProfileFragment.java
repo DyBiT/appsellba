@@ -29,10 +29,13 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+
 import java.io.IOException;
 
 import static android.support.v7.app.AppCompatActivity.RESULT_OK;
 
+/*FRAGMENT PERFIL DE USUARIO ,POSIBLES IMPLEMENTACIONES:
+ELIMINAR LA FOTO DE PERFIL, DEFINIR SOLO 1 VEZ EL NOMBRE DE USU, AÑADIR EL RESTABLECIMIENTO DE CONTRASEÑA*/
 public class ProfileFragment extends Fragment {
 
     private static final int CHOOSE_IMAGE = 101;
@@ -40,26 +43,24 @@ public class ProfileFragment extends Fragment {
     ImageView imageView;
     EditText editText;
     Uri uriProfileImage;
-    ProgressBar progressBar;
     String profileimageUrl;
     FirebaseAuth mAuth;
-    //private DatabaseReference mDatabaseRef;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_profile, container, false);
 
-
+        //OBTENEMOS LA INSTANCIA ACTUAL DEL USUARIO ACTIVO.
         mAuth = FirebaseAuth.getInstance();
         editText = (EditText) v.findViewById(R.id.editTextDisplayName);
         imageView = (ImageView) v.findViewById(R.id.imageView);
-        progressBar = v.findViewById(R.id.progressbar);
+
         textView = v.findViewById(R.id.textViewVerified);
         textViewEmail = v.findViewById(R.id.text_view_email);
         textViewEmail.setText(mAuth.getCurrentUser().getEmail());
 
-        //mDatabaseRef = FirebaseDatabase.getInstance().getReference("user");
-
+        //CUANDO PINCHAMOS EN EL ICONO DE CAMARA ABRIMOS LA GALERIA PARA SELECCIONAR FOTO DE PERFIL
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +68,7 @@ public class ProfileFragment extends Fragment {
             }
         });
         loadUserInformation();
-
+        //CUANDO PULSAMOS EL BOTON DE GUARDAR LLAMAMOS AL MÉTODO QUE ACTUALIZA LA INFORMACION DE USUARIO
         v.findViewById(R.id.buttonSave).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,33 +78,22 @@ public class ProfileFragment extends Fragment {
         return v;
     }
 
+
+    //CUANDO EL VENDEDOR INTENTA SUBIR UN PRODUCTO POR PRIMERA VEZ PRIMERO TENDRÁ QUE ACTUALIZAR SU PERFIL
+    //PARA DEFINIR SU NICKNAME Y COMPROBAR QUE SU CORREO ESTÉ VALIDADO
     @Override
     public void onStart() {
         super.onStart();
-
         Bundle bundle = getArguments();
         if (bundle != null && bundle.getInt("Vendedor") == 1) {
             Toast.makeText(getActivity(), "Completa tu perfil primero", Toast.LENGTH_SHORT).show();
             return;
         }
 
-            /*if (mAuth.getCurrentUser() == null) {
-                getActivity().finish();
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-            }*/
-
     }
-
+    //* variable User obtenemos todos los datos del usuario, si el nickName,email,foto perfil están definidos
+    // lo muestra cada uno en su posición correspondiente.
     private void loadUserInformation() {
-        NetworkConnection networkConnection = new NetworkConnection();
-        if (networkConnection.isConnectedToInternet(getActivity())
-                || networkConnection.isConnectedToMobileNetwork(getActivity())
-                || networkConnection.isConnectedToWifi(getActivity())) {
-
-        } else {
-            networkConnection.showNoInternetAvailableErrorDialog(getActivity());
-            return;
-        }
         final FirebaseUser user = mAuth.getCurrentUser();
 
         if (user != null) {
@@ -122,7 +112,12 @@ public class ProfileFragment extends Fragment {
 
             if (user.isEmailVerified()) {
                 textView.setText("Verificado");
+
+
+                //POR SI HUBIESE ALGUN PROBLEMA CON EL EMAIL Y NO ESTUVIESE VERIFICADO SI EL USUARIO
+                //CLICKEA EN LA OPCIÓN SE ENVIARÁ LA VERIFICACIÓN A SU EMAIL.
             } else {
+
                 textView.setText("Email no verificado(pulsa aquí para verificar)");
 
                 textView.setOnClickListener(new View.OnClickListener() {
@@ -141,63 +136,33 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-
+    //OBLIGAMOS AL USUARIO A QUE INSERTE UN NOMBRE DE USUARIO
     private void saveUserInformation() {
-        NetworkConnection networkConnection = new NetworkConnection();
-        if (networkConnection.isConnectedToInternet(getActivity())
-                || networkConnection.isConnectedToMobileNetwork(getActivity())
-                || networkConnection.isConnectedToWifi(getActivity())) {
-
-        } else {
-            networkConnection.showNoInternetAvailableErrorDialog(getActivity());
-            return;
-        }
         String displayName = editText.getText().toString();
         if (displayName.isEmpty()) {
             editText.setError("Nombre obligatorio");
             editText.requestFocus();
             return;
         }
-
+        //OBLIGAMOS AL USUARIO A QUE INSERTE UNA IMAGEN DE PERFIL
         FirebaseUser user = mAuth.getCurrentUser();
-        //profileimageUrl = user.getPhotoUrl().toString();
-
         if (profileimageUrl == null && imageView.getDrawable() == null) {
             Toast.makeText(getActivity(), "Imagen no seleccionada. Click en la cámara para seleccionar la imagen de perfil", Toast.LENGTH_SHORT).show();
             return;
         }
-
-
-
-        /*FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (task.isSuccessful()) {
-                            String token = task.getResult().getToken();
-                            User currentUser = new User(token.trim());
-                            String uId = mAuth.getCurrentUser().getUid();
-                            mDatabaseRef.child(uId).setValue(currentUser);
-                        } else {
-                            Toast.makeText(getActivity(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
-                        }
-                    }
-                });*/
-
-
+        //CUANDO ESTAN LOS PARAMETROS DEFINIDOS MOSTRAMOS LA INFORMACIÓN AL USUARIO.
         if (user != null && profileimageUrl != null) {
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                     .setDisplayName(displayName)
                     .setPhotoUri(Uri.parse(profileimageUrl))
                     .build();
-
+            //METODO PARA ACTUALIZAR SU PERFIL
             user.updateProfile(profile)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(getActivity(), "Profile updated successfully", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), "Perfil actualizado con éxito", Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(getActivity(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                 return;
@@ -206,12 +171,13 @@ public class ProfileFragment extends Fragment {
                     });
 
         } else {
-            Toast.makeText(getActivity(), "Some error occured", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Ocurrió algún error", Toast.LENGTH_LONG).show();
             return;
         }
 
     }
 
+    //METODO PARA LA SUBIDA, COMPRESION Y REGISTRAR EN EL CLOUD Y LA URL EN LA BASE DE DATOS.
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -227,18 +193,19 @@ public class ProfileFragment extends Fragment {
         }
     }
 
+    //METODO PARA SUBIR LA IMAGEN EL CLOUD DE FIREBASE
     private void uploadImageToFirebaseStorage() {
+        //REFERENCIAMOS DESDE LOS METODOS DE FIREBASE
         final StorageReference ProfileImageRef;
         ProfileImageRef = FirebaseStorage.getInstance().getReference(mAuth.getCurrentUser().getEmail() + ".jpg");
-
+        //Para subir un archivo local a Cloud Storage, creamos una referencia a uriProfileImage
+        // y con el metodo  .putFile() lo subimos al Cloud Storage.
         if (uriProfileImage != null) {
-            progressBar.setVisibility(View.VISIBLE);
-
             ProfileImageRef.putFile(uriProfileImage)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            progressBar.setVisibility(View.GONE);
+                        //OPTENEMOS LA URL REFERENTE EN EL CLOUD PARA INCLUIRLA EN LA BASE DE DATOS
                             ProfileImageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
@@ -250,19 +217,17 @@ public class ProfileFragment extends Fragment {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            progressBar.setVisibility(View.GONE);
                             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
         }
     }
 
-
+//MOSTRAMOS LA GALERIA LOCAL DEL USUARIO PARA QUE ELIGA UNA FOTO CON LA EXTENSION
     private void showImageChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select profile image"), CHOOSE_IMAGE);
+        startActivityForResult(Intent.createChooser(intent, "Selecciona una imagen de perfil"), CHOOSE_IMAGE);
     }
-
 }

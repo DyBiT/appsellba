@@ -5,7 +5,9 @@ import com.google.firebase.database.Exclude;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+//Creamos la clase Upload con sus correspondientes variables encapsuladas Getter&Setters para subir
+// un producto a nuestra BBDD RealTime en FireBase con los metodos predefinidos, también aprovechamos
+// para darle el formato a la fecha /SimpleDateFormat.
 public class Upload {
     private String mName;
     private String mImageUrl;
@@ -20,6 +22,8 @@ public class Upload {
         //empty constructor needed
     }
 
+    //Esta clase nos conducirá en caso de que el usuario no tenga un nickName definido a definirlo
+    // en el fragment de perfil.
     public Upload(String name, String imageUrl, String price, String desc) {
         if (name.trim().equals("")) {
             name = "Sin nombre";

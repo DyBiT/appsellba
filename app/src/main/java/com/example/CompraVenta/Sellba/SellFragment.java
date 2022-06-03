@@ -33,6 +33,8 @@ import com.squareup.picasso.Picasso;
 
 import static android.app.Activity.RESULT_OK;
 
+
+//CREAMOS EL FRAGMENT DE VENTA DE PRODUCTOS
 public class SellFragment extends Fragment {
 
     private static final int PICK_IMAGE_REQUEST = 1;
@@ -64,14 +66,19 @@ public class SellFragment extends Fragment {
         mImageView = v.findViewById(R.id.image_view);
         mProgressBar = v.findViewById(R.id.progress_bar);
         mDescription = v.findViewById(R.id.Description);
+        //Establecemos en el hosting donde se van a guardar en firebase las imagenes.
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
+        //Establecemos en la base de datos REALTIME donde se van a guardar los datos de la subida.
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
+        //Cuando pulsemos el botón de seleccionar imagen, ejecutará el metodo para selccionar la imagen
         mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFileChooser();
             }
         });
+
+        //METODO PARA SUBIR EL PRODUCTO
         mButtonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,16 +95,9 @@ public class SellFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        NetworkConnection networkConnection = new NetworkConnection();
-        if (networkConnection.isConnectedToInternet(getActivity())
-                || networkConnection.isConnectedToMobileNetwork(getActivity())
-                || networkConnection.isConnectedToWifi(getActivity())) {
-        } else {
-            networkConnection.showNoInternetAvailableErrorDialog(getActivity());
-            return;
-        }
     }
 
+    //METODO PARA ABRIR LA GALERIA DEL USUARIO Y PUEDA SELECCIONAR LA IMAGEN DESEADA.
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -105,6 +105,10 @@ public class SellFragment extends Fragment {
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
+
+    //METODO PARA OBTENER EL RESULTADO DE LA ACTIVIDADA, SI LOS PARAMETROS SON CORRECTOS
+    //EL METODO OBTIENES LOS DATOS DE LA IMAGEN (mImageUri) y la carga con la biblioteca
+    //Picasso en mImageView.
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -116,6 +120,7 @@ public class SellFragment extends Fragment {
         }
     }
 
+    /*Testing para subir una imagen desde la camara
     private void cropImage() {
         try {
             Intent cropIntent;
@@ -134,12 +139,16 @@ public class SellFragment extends Fragment {
         }
     }
 
+     */
+
+    //METODO PARA OBTENER LA EXTENSION DE LA IMAGEN Y POSTERIOR SELECCIONAR SOLO IMG'S
     private String getFileExtension(Uri uri) {
         ContentResolver cR = getActivity().getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
-
+    //METODO para que el usuario establezca su nickName en caso de que este vacio cuando
+    // subamos un artículo a sellba, nos dirigará a ProfileFragment.
     private void uploadFile() {
         if (mAuth.getInstance().getCurrentUser().getDisplayName() == null) {
             ProfileFragment profileFragment = new ProfileFragment();
@@ -152,23 +161,33 @@ public class SellFragment extends Fragment {
                     .commit();
             return;
         }
+        //VERIFICACIÓN Y MARCAJE DEL NOMBRE DEL PRODUCTO
         if (mEditTextFileName.getText().toString().trim().isEmpty()) {
             mEditTextFileName.setError("Nombre obligatorio");
             mEditTextFileName.requestFocus();
             return;
         }
+        //VERIFICACIÓN Y MARCAJE DEL PRECIO DEL PRODUCTO
         if (mEditTextFilePrice.getText().toString().trim().isEmpty()) {
             mEditTextFilePrice.setError("Precio obligatorio");
             mEditTextFilePrice.requestFocus();
             return;
         }
+        //VERIFICACIÓN Y MARCAJE DE LA IMAGEN DEL PRODUCTO
+        //URI donde hemos guardado la imagen de la galería y la subiremos a firebase.
         if (mImageUri != null) {
-            final StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
-                    + "." + getFileExtension(mImageUri));
+            //Para subir un archivo local a Cloud Storage, creamos una referencia a mImageUri y con el metodo
+            // .putFile() lo subimos al Cloud Storage.
+            final StorageReference fileReference
+                    = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(mImageUri));
             mUploadTask = fileReference.putFile(mImageUri)
+                    //Cuando subimos la imagen, mediante UploadTask administramos y supervisamos el estado de la carga.
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
+                        //UploadTask onSucces:
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            //MIENTRAS SE CARGA LA IMAGEN A TRAVÉS DE HANDLER mostramos una barra de carga
+                            //mPorgressBar para evitar errores y fallos visuales.
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
                                 @Override
@@ -176,9 +195,12 @@ public class SellFragment extends Fragment {
                                     mProgressBar.setProgress(0);
                                 }
                             }, 500);
+                            //una vez seleccionamos la imagen y limpiamos el buffer de las variables para evitar problemas
                             mImageUri = null;
                             mImageView.setImageBitmap(null);
                             Toast.makeText(getActivity(), "Subida exitosa", Toast.LENGTH_LONG).show();
+                            //Cuando hemos realizado la subida a traves de los metodos de FIREBASE procedemos
+                            // a guardarlos en la base de datos
                             taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
@@ -191,6 +213,7 @@ public class SellFragment extends Fragment {
                                     mDescription.setText("");
                                 }
                             })
+                                    //Mostramos la expceción en caso de que la subida falle.
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
@@ -205,6 +228,9 @@ public class SellFragment extends Fragment {
                             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     })
+                    //Cuando pulsamos el botón subir obtenemos los bytes que ocupa la imagen
+                    //y los vamos cargando en la barra de progreso(mProgressBar) por si ocurriese algún problema
+                    // el usuario pueda ver el progreso de la subida.
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {

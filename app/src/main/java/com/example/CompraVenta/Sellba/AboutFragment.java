@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
+/* FRAGMENT MUY SIMPLE PARA MOSTRAR UN POCO DE INFORMACIÓN SOBRE LA APP Y LOS CREADORES*/
 public class AboutFragment extends Fragment{
 
     @Nullable
