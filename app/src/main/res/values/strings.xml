@@ -26,4 +26,7 @@
     <string name="go_back">Volver atrás</string>
     <string name="reset_pass">Generar cambio de contraseña</string>
     <string name="opinion">En SELLBA sabemos lo importante que es construir nuestra marca a partir del valor real que entregamos a nuestros clientes. Por ello, creemos que no solo nuestros productos deben tener la mejor relación calidad-precio, si no que además, deben ir acompañados de unos servicios que te lo pongan fácil y que te ayuden a tomar la mejor decisión.</string>
+    <string name="next">next</string>
+    <string name="skip">skip</string>
+    <string name="start">start</string>
 </resources>

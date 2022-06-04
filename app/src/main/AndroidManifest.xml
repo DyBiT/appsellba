@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.CompraVenta.Sellba">
-
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,24 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.example.CompraVenta.Sellba.ResetPassActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.example.CompraVenta.Sellba.Activity_splash_screen"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.example.CompraVenta.Sellba.DrawerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.example.CompraVenta.Sellba.LoginActivity"
-            android:screenOrientation="portrait">
+        <activity android:name="com.example.CompraVenta.Sellba.MainActivity"
+
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.CompraVenta.Sellba.LoginActivity"
+
+            android:screenOrientation="portrait" />
+        <activity android:name="com.example.CompraVenta.Sellba.WelcomeActivity"
+
+            android:screenOrientation="portrait" >
 
         </activity>
         <activity android:name="com.example.CompraVenta.Sellba.SignUpActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
+        <activity android:name="com.example.CompraVenta.Sellba.DrawerActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.example.CompraVenta.Sellba.ResetPassActivity"
+            android:screenOrientation="portrait"  />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

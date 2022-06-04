@@ -17,8 +17,6 @@ import com.google.firebase.auth.FirebaseAuth;
 oculto en nuestra aplicación y lo desplazaremos pinchando en la barra superior o desplazando a la drch.*/
 public class DrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-//private static int SPLASH_TIME_OUT = 4000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

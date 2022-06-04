@@ -205,7 +205,7 @@ public class ProfileFragment extends Fragment {
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        //OPTENEMOS LA URL REFERENTE EN EL CLOUD PARA INCLUIRLA EN LA BASE DE DATOS
+                            //OPTENEMOS LA URL REFERENTE EN EL CLOUD PARA INCLUIRLA EN LA BASE DE DATOS
                             ProfileImageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
@@ -223,7 +223,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-//MOSTRAMOS LA GALERIA LOCAL DEL USUARIO PARA QUE ELIGA UNA FOTO CON LA EXTENSION
+    //MOSTRAMOS LA GALERIA LOCAL DEL USUARIO PARA QUE ELIGA UNA FOTO CON LA EXTENSION
     private void showImageChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");

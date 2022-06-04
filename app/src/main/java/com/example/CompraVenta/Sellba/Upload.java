@@ -19,7 +19,7 @@ public class Upload {
     private String mDesc;
 
     public Upload() {
-        //empty constructor needed
+        //Necesitamos un constructor vacio
     }
 
     //Esta clase nos conducirá en caso de que el usuario no tenga un nickName definido a definirlo
