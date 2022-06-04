@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/orbitron"
         app:headerLayout="@layout/nav_header"
         app:itemTextColor="@color/white"

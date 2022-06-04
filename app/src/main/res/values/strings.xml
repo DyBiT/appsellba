@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FirebaseAuth</string>
+    <string name="app_name">SELLBA</string>
     <string name="email">Correo electrónico</string>
     <string name="password">Contraseña</string>
     <string name="don_t_have_account_sign_up">¿No tienes cuenta?\n Registrate</string>
@@ -9,14 +9,14 @@
     <string name="logout">Desconectar</string>
     <string name="about">Sobre nosotros</string>
     <string name="share">Compartir</string>
-    <string name="juggler">BIENVENIDO A SELLBA</string>"
+    <string name="sellba">BIENVENIDO\n AL FUTURO DE LO\n ELÉCTRICO</string>"
     <string name="navigation_drawer_open">Abrir navegación</string>
     <string name="navigation_drawer_close">Cerrar navegacion</string>
     <string name="coming_soon">Próximamente...</string>
     <string name="home">Inicio</string>
     <string name="product_name">Nombre de producto</string>
     <string name="feedback">Comentarios</string>
-    <string name="Welcome_to_Juggler">BIENVENIDO A SELLBA</string>
+    <string name="Welcome_to_Sellba">BIENVENIDOS A SELLBA</string>
     <string name="intro">Sellba es una plataforma para cubrir un hueco que no está cubierto y crecerá su necesidad en medida que crece el cambio hacia las energías renovables en todos los sectores.\n Una plataforma de compra y venta de nuevas y baterías de segunda mano de distintos tipos de dispositivos para utilizar en una segunda vida.</string>
     <string name="our_team">Nuestro equipo</string>
     <string name="J">" Nombre :  José Pablo Fernández\n Email : DAM2B-07@IESJOVELLANOS.ORG  \n"</string>
@@ -24,7 +24,7 @@
     <string name="D">" Nombre :  David Gutiérrez\n Email : DAM2B-09@IESJOVELLANOS.ORG\n"</string>
     <string name="forgot_pass">¿Has olvidado tu contraseña?\n Recuperala</string>
     <string name="go_back">Volver atrás</string>
-    <string name="reset_pass">Generar cambio de contraseña</string>
+    <string name="reset_pass">Escribir contraseña nueva</string>
     <string name="opinion">En SELLBA sabemos lo importante que es construir nuestra marca a partir del valor real que entregamos a nuestros clientes. Por ello, creemos que no solo nuestros productos deben tener la mejor relación calidad-precio, si no que además, deben ir acompañados de unos servicios que te lo pongan fácil y que te ayuden a tomar la mejor decisión.</string>
     <string name="next">next</string>
     <string name="skip">skip</string>
