@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/fondo_3"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
@@ -14,10 +14,10 @@
         android:layout_weight="1">
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="250dp"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
             android:layout_centerInParent="true"
-            android:background="@drawable/logo_fondoblanco"
+            android:background="@drawable/panel_sellba_transparente_1"
             android:contentDescription="TODO" />
     </RelativeLayout>
 
@@ -42,7 +42,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:fontFamily="@font/orbitron"
-                android:textColorHint="@color/colorAccent2">
+                android:textColorHint="@color/white">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/editTextEmail"
@@ -50,6 +50,9 @@
                     android:layout_height="wrap_content"
                     android:autofillHints=""
                     android:fontFamily="@font/orbitron"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textColorLink="@color/white"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:paddingBottom="15dp" />
@@ -61,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/orbitron"
-                android:textColorHint="@color/colorAccent2"
+                android:textColorHint="@color/white"
                 app:passwordToggleEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
@@ -69,6 +72,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/orbitron"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textColorLink="@color/white"
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:paddingBottom="15dp" />
@@ -82,13 +88,14 @@
                 android:layout_gravity="center"
                 android:layout_margin="7dp"
                 android:background="@drawable/rounded_button_transparent"
-                android:backgroundTint="@color/blackish_blue"
+                android:backgroundTint="@color/md_light_blue_900"
                 android:elevation="4dp"
                 android:fontFamily="@font/orbitron"
                 android:text="@string/login"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent2"
-                android:textSize="30sp" />
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textView_forgotPass"
@@ -99,7 +106,7 @@
                 android:text="@string/forgot_pass"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/md_purple_500_75"
+                android:textColor="@color/md_light_blue_900"
                 android:textSize="15sp" />
 
             <TextView
@@ -111,7 +118,7 @@
                 android:text="@string/don_t_have_account_sign_up"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/md_blue_900"
+                android:textColor="@color/md_light_blue_900"
                 android:textSize="15sp" />
 
         </LinearLayout>

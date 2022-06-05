@@ -2,30 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/fondo_3"
     android:orientation="vertical">
-
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/orbitron"
-        android:text="Comentario"
+        android:text="MANDAR MENSAJE AL VENDEDOR"
         android:textAllCaps="true"
-        android:textColor="@color/md_blue_900"
-        android:textSize="30dp" />
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editTextMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
-        android:fontFamily="@font/orbitron"
         android:hint="Introduzca su mensaje"
         android:lines="4"
-        android:textColor="@color/colorAccent2" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/buttonSend"
@@ -39,6 +40,7 @@
         android:elevation="8dp"
         android:fontFamily="@font/orbitron"
         android:text="Enviar"
-        android:textColor="@color/light_blue"
-        android:textSize="30sp" />
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 </LinearLayout>

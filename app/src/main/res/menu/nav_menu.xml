@@ -8,8 +8,8 @@
 
         <item
             android:id="@+id/nav_home"
-            android:title="@string/home"
-            android:icon="@drawable/ic_home"/>
+            android:title="@string/market"
+            android:icon="@drawable/ic_solar_panel"/>
 
         <item
             android:id="@+id/nav_my_profile"
@@ -18,7 +18,7 @@
         <item
             android:id="@+id/nav_sell"
             android:title="@string/sell"
-            android:icon="@drawable/ic_sell"/>
+            android:icon="@drawable/ic_battery_charging"/>
 
         <item
             android:id="@+id/nav_logout"

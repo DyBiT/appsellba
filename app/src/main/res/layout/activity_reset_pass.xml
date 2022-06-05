@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/fondo_3"
     android:orientation="vertical"
     tools:context=".ResetPassActivity">
 
@@ -19,9 +19,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/logo_fondoblanco"
             android:contentDescription="TODO" />
-
     </RelativeLayout>
-
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,7 +34,6 @@
             android:orientation="vertical"
             android:paddingLeft="15dp"
             android:paddingRight="15dp">
-
 
             <android.support.design.widget.TextInputLayout
 
@@ -56,17 +53,14 @@
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:paddingBottom="15dp" />
-
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/orbitron"
                 android:textColorHint="@color/colorAccent2"
                 app:passwordToggleEnabled="true">
-
 
             </android.support.design.widget.TextInputLayout>
 
@@ -82,7 +76,6 @@
                 android:text="@string/reset_pass"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent2" />
-
 
             <Button
                 android:id="@+id/textViewBack"

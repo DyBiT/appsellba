@@ -5,7 +5,7 @@
     <string name="don_t_have_account_sign_up">¿No tienes cuenta?\n Registrate</string>
     <string name="login">CONECTARSE</string>
     <string name="my_profile">Tu perfil</string>
-    <string name="sell">Mercado</string>
+    <string name="sell">Vender productos</string>
     <string name="logout">Desconectar</string>
     <string name="about">Sobre nosotros</string>
     <string name="share">Compartir</string>
@@ -13,7 +13,7 @@
     <string name="navigation_drawer_open">Abrir navegación</string>
     <string name="navigation_drawer_close">Cerrar navegacion</string>
     <string name="coming_soon">Próximamente...</string>
-    <string name="home">Inicio</string>
+    <string name="market">Mercado</string>
     <string name="product_name">Nombre de producto</string>
     <string name="feedback">Comentarios</string>
     <string name="Welcome_to_Sellba">BIENVENIDOS A SELLBA</string>

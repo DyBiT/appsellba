@@ -3,22 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/fondo_3"
     android:orientation="vertical"
     tools:context=".ProfileFragment">
 
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="290sp"
+        android:layout_height="290sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:background="@mipmap/ic_camera_round"
+        android:background="@drawable/ic_marco_foto_perfil"
+        android:tint="@color/white"
+        android:backgroundTint="@color/white"
         android:scaleType="centerCrop" />
 
     <TextView
@@ -30,7 +31,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/orbitron"
         android:text="Nombre"
-        android:textColor="@color/colorAccent2"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -45,7 +46,10 @@
         android:fontFamily="@font/oxanium"
         android:hint="Introduzca nombre"
         android:inputType="textPersonName"
-        android:textColor="@color/colorAccent2" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/email_tag"
@@ -56,7 +60,7 @@
         android:layout_marginTop="25dp"
         android:fontFamily="@font/orbitron"
         android:text="Email"
-        android:textColor="@color/colorAccent2"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -70,8 +74,11 @@
         android:layout_toEndOf="@+id/email_tag"
         android:fontFamily="@font/oxanium"
         android:text="email_id"
-        android:textColor="@color/colorAccent2"
-        android:textSize="15dp" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textViewVerified"
@@ -80,14 +87,17 @@
         android:layout_below="@+id/editTextDisplayName"
         android:layout_alignBottom="@+id/text_view_email"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="9dp"
         android:layout_marginBottom="-2dp"
         android:fontFamily="@font/oxanium"
         android:shadowColor="#3322"
         android:text="verificado?"
-        android:textColor="@color/colorAccent2"
-        android:textSize="13dp" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="14dp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/buttonSave"
@@ -96,7 +106,7 @@
         android:layout_below="@+id/textViewVerified"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/rounded_button_solid"
         android:backgroundTint="@color/blackish_blue"
         android:fontFamily="@font/orbitron"
@@ -105,6 +115,7 @@
         android:text="GUARDAR"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 
 </RelativeLayout>

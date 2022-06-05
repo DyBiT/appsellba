@@ -5,7 +5,6 @@
     android:background="@drawable/fondo_3"
     android:orientation="vertical">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,8 +24,9 @@
         android:layout_marginLeft="10dp"
         android:hint="Introduzca su mensaje"
         android:lines="4"
-        android:textColor="@color/colorAccent2"
-        android:textColorHint="@color/colorAccent2"/>
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"/>
 
     <Button
         android:id="@+id/buttonSend"
@@ -39,18 +39,20 @@
         android:background="@color/blackish_blue"
         android:elevation="8dp"
         android:text="ENVIAR"
-        android:textColor="@color/colorAccent2"
-        android:textSize="30sp"/>
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/opinion"
         android:textSize="15dp"
+        android:textStyle="bold"
         android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:textColor="@color/colorAccent2"
+        android:textColor="@color/white"
         android:textAlignment="center" />
 
     <ImageView
@@ -58,7 +60,7 @@
         android:layout_height="160dp"
         android:layout_marginTop="1dp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/colorAccent2"
+        android:backgroundTint="@color/white"
         android:background="@drawable/sellba_portada_transparente" />
 
 </LinearLayout>

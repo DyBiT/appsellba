@@ -57,9 +57,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         layouts = new int[]{
                 R.layout.welcome_slider,
-                R.layout.compra_slider,
-                R.layout.venta_slider,
-                R.layout.info_slider};
+                R.layout.compra_slider,};
 
         // adding bottom dots
         addBottomDots(0);

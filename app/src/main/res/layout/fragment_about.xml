@@ -79,7 +79,7 @@
             android:layout_margin="10dp"
             android:text="@string/intro"
             android:textSize="16dp"
-            android:textStyle="normal"
+            android:textStyle="bold"
             android:textColor="@color/colorAccent2"/>
 
         <TextView
