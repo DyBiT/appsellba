@@ -75,7 +75,8 @@
                 android:fontFamily="@font/orbitron"
                 android:text="@string/reset_pass"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent2" />
+                android:textColor="@color/colorAccent2"
+                android:textStyle="bold"/>
 
             <Button
                 android:id="@+id/textViewBack"
@@ -88,7 +89,8 @@
                 android:fontFamily="@font/orbitron"
                 android:text="@string/go_back"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent2" />
+                android:textColor="@color/colorAccent2"
+                android:textStyle="bold"/>
 
 
         </LinearLayout>

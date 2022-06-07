@@ -7,19 +7,37 @@
     android:orientation="vertical"
     tools:context=".ProfileFragment">
 
+    <Button
+        android:id="@+id/resetPW"
+        android:layout_width="278dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSave"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="67dp"
+        android:background="@drawable/rounded_button_solid"
+        android:backgroundTint="@color/blackish_blue"
+        android:fontFamily="@font/orbitron"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="RESETEAR CONTRASEÑA"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="290sp"
-        android:layout_height="290sp"
+        android:layout_width="291dp"
+        android:layout_height="234dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/ic_marco_foto_perfil"
-        android:tint="@color/white"
-        android:backgroundTint="@color/white"
+        android:background="@mipmap/ic_marco_foto_perfil"
         android:scaleType="centerCrop" />
 
     <TextView
@@ -69,6 +87,7 @@
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name_tag"
+        android:layout_marginStart="48dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="28dp"
         android:layout_toEndOf="@+id/email_tag"
@@ -78,7 +97,7 @@
         android:textColorHint="@color/white"
         android:textColorLink="@color/white"
         android:textSize="16dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewVerified"
@@ -87,35 +106,36 @@
         android:layout_below="@+id/editTextDisplayName"
         android:layout_alignBottom="@+id/text_view_email"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="18dp"
         android:layout_marginRight="9dp"
-        android:layout_marginBottom="-2dp"
+        android:layout_marginBottom="0dp"
         android:fontFamily="@font/oxanium"
         android:shadowColor="#3322"
-        android:text="verificado?"
+        android:text="verificado"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textColorLink="@color/white"
         android:textSize="14dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
+        android:layout_width="278dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewVerified"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/text_view_email"
+        android:layout_alignParentEnd="true"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="67dp"
         android:background="@drawable/rounded_button_solid"
         android:backgroundTint="@color/blackish_blue"
         android:fontFamily="@font/orbitron"
-        android:paddingLeft="55dp"
-        android:paddingRight="55dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="GUARDAR"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

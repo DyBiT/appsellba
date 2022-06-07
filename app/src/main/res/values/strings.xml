@@ -24,9 +24,9 @@
     <string name="D">" Nombre :  David Gutiérrez\n Email : DAM2B-09@IESJOVELLANOS.ORG\n"</string>
     <string name="forgot_pass">¿Has olvidado tu contraseña?\n Recuperala</string>
     <string name="go_back">Volver atrás</string>
-    <string name="reset_pass">Escribir contraseña nueva</string>
+    <string name="reset_pass">Generar nueva contraseña</string>
     <string name="opinion">En SELLBA sabemos lo importante que es construir nuestra marca a partir del valor real que entregamos a nuestros clientes. Por ello, creemos que no solo nuestros productos deben tener la mejor relación calidad-precio, si no que además, deben ir acompañados de unos servicios que te lo pongan fácil y que te ayuden a tomar la mejor decisión.</string>
-    <string name="next">next</string>
-    <string name="skip">skip</string>
-    <string name="start">start</string>
+    <string name="next">Siguiente</string>
+    <string name="skip">Saltar</string>
+    <string name="start">Empezar</string>
 </resources>

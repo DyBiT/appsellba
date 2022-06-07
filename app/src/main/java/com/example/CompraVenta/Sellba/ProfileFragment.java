@@ -1,3 +1,13 @@
+
+/*        ButtonPW.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getActivity(),ResetPassActivity.class);
+            startActivity(intent);
+        }
+    });
+    */
+
 package com.example.CompraVenta.Sellba;
 
 import android.content.Intent;
@@ -11,6 +21,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -45,6 +56,7 @@ public class ProfileFragment extends Fragment {
     Uri uriProfileImage;
     String profileimageUrl;
     FirebaseAuth mAuth;
+    private Button ButtonPW;
 
 
     @Override
@@ -53,9 +65,10 @@ public class ProfileFragment extends Fragment {
 
         //OBTENEMOS LA INSTANCIA ACTUAL DEL USUARIO ACTIVO.
         mAuth = FirebaseAuth.getInstance();
+        //DEFINIMOS LOS EDITTEXT,BOTONES Y TEXTVIEWS
         editText = (EditText) v.findViewById(R.id.editTextDisplayName);
         imageView = (ImageView) v.findViewById(R.id.imageView);
-
+        ButtonPW = (Button) v.findViewById(R.id.resetPW);
         textView = v.findViewById(R.id.textViewVerified);
         textViewEmail = v.findViewById(R.id.text_view_email);
         textViewEmail.setText(mAuth.getCurrentUser().getEmail());
@@ -73,6 +86,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 saveUserInformation();
+            }
+        });
+        ButtonPW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ResetPassActivity.class);
+                startActivity(intent);
             }
         });
         return v;
