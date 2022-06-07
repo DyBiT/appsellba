@@ -59,12 +59,17 @@ public class MsgFragment extends Fragment implements View.OnClickListener {
         return v;
     }
     //PASAMOS LOS PARÁMETROS REQUERIDOS PARA LA CLASE CREADA SENDMAIL.
-    private void sendEmail() {
+    private void sendEmailToSeller() {
         String email = sEmail;
-        String subject = "[SELLBA] Consulta sobre el producto " + pName;
+        String subject = "[SELLBA] Petición de producto " + pName;
+        String msg = "nombre-desconocido";
+        if (bName != "")
+            msg = bName;
+        String thankMsg = "\n\nGracias por usar SELLBA :)";
         String autoMsg = "\n\nEsto es un email autogenerado por SELLBA. Por favor no responda a este correo.";
-        String message = editTextMessage.getText().toString().trim() + "\n\nenviado por: " + bName + "(" + bEmail + ")\n" + autoMsg;
-        SendMail sm = new SendMail(getActivity(), email, subject, message);
+        String messageTxt ="Hola " + sName + ", " + msg + " está interesado en su producto \"" + pName + "\"."+"\n"+
+         "Mensaje de " +bName   +".\n"+editTextMessage.getText().toString().trim() + "\n\nSi quieres puedes escribir " + bName + " en el email " + bEmail + " ." + thankMsg + autoMsg;
+        SendMail sm = new SendMail(getActivity(), email, subject, messageTxt);
         sm.execute();
     }
 
@@ -86,7 +91,8 @@ public class MsgFragment extends Fragment implements View.OnClickListener {
         builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                sendEmail();
+                sendEmailToSeller();
+                sendEmailToBuyer();
                 editTextMessage.setText("");
             }
         });
@@ -101,7 +107,18 @@ public class MsgFragment extends Fragment implements View.OnClickListener {
 
         AlertDialog ad = builder.create();
         ad.show();
+    }
 
+    private void sendEmailToBuyer() {
+        String email = bEmail;
+        String subject = "[SELLBA] Confirmación" + pName;
+        String thankMsg = "\n\n Gracias por usar SELLBA :)";
+        String autoMsg = "\n\n Esto es un Email autogenerado por SELLBA. Por favor no responda este mensaje.";
+
+        //String message = "Hola " + bName + ".\nSu petición de contacto con " + sName  +" para el producto \"" + pName + "\". Puedes enviar un mensaje a " + sName + " en la app clickeando en la opción mensaje." + thankMsg + autoMsg ;
+        String message = "Hola " + bName + ".\nSu petición de contacto con " + sName  +" para el producto \"" + pName + "\". Se ha registrado correctamente, espera futuros mensajes de "+sName + thankMsg + autoMsg ;
+        SendMail sm2b = new SendMail(getActivity(), email, subject, message);
+        sm2b.execute();
     }
 
 }

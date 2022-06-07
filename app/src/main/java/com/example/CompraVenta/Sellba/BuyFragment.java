@@ -55,6 +55,9 @@ public class BuyFragment extends Fragment {
     private ValueEventListener mDBListener;
     private List<Upload> mUploads;
 
+
+    //Método para saber si el anuncio pertenece al usuario comparando el email, en tal caso
+    //ocultaremos el botón de conectar y mensaje y mostrareros el de eliminar para eliminar el producto.
     @Override
     public void onStart() {
         super.onStart();
@@ -67,6 +70,7 @@ public class BuyFragment extends Fragment {
         }
     }
 
+    //Definimos los botones, texto y variables.
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -120,7 +124,8 @@ public class BuyFragment extends Fragment {
 
         }
 
-
+        //Cuando el usuario clickea en el botón mensaje, creamos un objeto de la clase MsgFragment();
+        //al cual le pasamos los párametros con el método bundle.
         button_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,6 +195,8 @@ public class BuyFragment extends Fragment {
             }
         });
 
+        //Método borrar con mensaje de confirmación para la eliminación del producto el cual nos llama
+        // a el método (deleteProduct).
         button_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -219,6 +226,10 @@ public class BuyFragment extends Fragment {
         return v;
     }
 
+    //Eliminamos el producto de la lista y su referencia en la base de datos.
+    //Obtenemos la posición del elemento asignamos una variable para obtener su KEY(predefinido de firebase)
+    //Referenciamos la URL de la imagen y con el metodo mDatabaseRef.child(selectedKey).removeValue();
+    //Eliminamos el producto con todos sus parámetros(Usuario,fecha,nombre,etc) de la BD.
     private void deleteProduct(){
         Upload selectedItem = mUploads.get(position);
         final String selectedKey = selectedItem.getKey();
@@ -234,7 +245,7 @@ public class BuyFragment extends Fragment {
             }
         });
     }
-
+    //Método para enviar mensaje al vendedor , le pasamos los párametros requeridos por la clase SendMail.
     private void sendEmailToSeller() {
         String email = sEmail;
         String subject = "[SELLBA] Petición de producto " + pName;
@@ -249,14 +260,15 @@ public class BuyFragment extends Fragment {
         SendMail sm2s = new SendMail(getActivity(), email, subject, message);
         sm2s.execute();
     }
-
+    //Método para enviar mensaje al comprador , le pasamos los párametros requeridos por la clase SendMail.
     private void sendEmailToBuyer() {
         String email = bEmail;
-        String subject = "[SELLBA] Solicitud exitosa para " + pName;
+        String subject = "[SELLBA] Confirmación" + pName;
         String thankMsg = "\n\n Gracias por usar SELLBA :)";
         String autoMsg = "\n\n Esto es un Email autogenerado por SELLBA. Por favor no responda este mensaje.";
 
-        String message = "Hola " + bName + ". tienes una petición " + sName  +" de \"" + pName + "\". Puedes enviar un mensaje a " + sName + " en la app clickeando en la opción mensaje." + thankMsg + autoMsg ;
+        //String message = "Hola " + bName + ".\nSu petición de contacto con " + sName  +" para el producto \"" + pName + "\". Puedes enviar un mensaje a " + sName + " en la app clickeando en la opción mensaje." + thankMsg + autoMsg ;
+        String message = "Hola " + bName + ".\nSu petición de contacto con " + sName  +" para el producto \"" + pName + "\". Se ha registrado correctamente, espera futuros mensajes de "+sName + thankMsg + autoMsg ;
         SendMail sm2b = new SendMail(getActivity(), email, subject, message);
         sm2b.execute();
     }
