@@ -23,8 +23,8 @@
                     android:id="@+id/product_image"
                     android:layout_width="300dp"
                     android:layout_height="300dp"
-                    android:layout_margin="30dp"
                     android:layout_gravity="center"
+                    android:layout_margin="30dp"
                     android:background="@mipmap/ic_loading"
                     android:contentDescription="TODO" />
 
@@ -132,8 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/product_date"
-                android:background="?android:attr/listDivider"
-            />
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/Description_tag"
@@ -147,7 +146,7 @@
                 android:fontStyle="italic"
                 android:text="Description"
                 android:textSize="20dp"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/Description"
@@ -169,15 +168,6 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/offer_button"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:duplicateParentState="true"
-        android:paddingLeft="10dp"
-        android:text="Comprar" />
-
-    <Button
         android:id="@+id/delete_button"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
@@ -191,13 +181,18 @@
 
     <Button
         android:id="@+id/msg_button"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/offer_button"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:background="@color/md_green_400"
         android:duplicateParentState="true"
         android:paddingStart="5dp"
         android:paddingRight="10dp"
-        android:text="Mensaje" />
+        android:text="Conectar"
+        android:textStyle="bold" />
 
 </RelativeLayout>

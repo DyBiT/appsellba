@@ -68,7 +68,7 @@ public class MsgFragment extends Fragment implements View.OnClickListener {
         String thankMsg = "\n\nGracias por usar SELLBA :)";
         String autoMsg = "\n\nEsto es un email autogenerado por SELLBA. Por favor no responda a este correo.";
         String messageTxt ="Hola " + sName + ", " + msg + " está interesado en su producto \"" + pName + "\"."+"\n"+
-         "Mensaje de " +bName   +".\n"+editTextMessage.getText().toString().trim() + "\n\nSi quieres puedes escribir " + bName + " en el email " + bEmail + " ." + thankMsg + autoMsg;
+         "Mensaje de " +bName   +":\n"+editTextMessage.getText().toString().trim() + "\n\nSi quieres puedes escribir " + bName + " en el email " + bEmail + " ." + thankMsg + autoMsg;
         SendMail sm = new SendMail(getActivity(), email, subject, messageTxt);
         sm.execute();
     }

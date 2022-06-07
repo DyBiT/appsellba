@@ -63,7 +63,6 @@ public class BuyFragment extends Fragment {
         super.onStart();
         String testEmail = mAuth.getInstance().getCurrentUser().getEmail();
         if (testEmail.equals(sEmail)) {
-            button_make_offer.setVisibility(View.GONE);
             button_message.setVisibility(View.GONE);
             button_delete.setVisibility(View.VISIBLE);
             Toast.makeText(getActivity(), "Eres el vendedor de este producto", Toast.LENGTH_SHORT).show();
@@ -79,7 +78,6 @@ public class BuyFragment extends Fragment {
         price = (TextView) v.findViewById(R.id.product_price);
         seller = (TextView) v.findViewById(R.id.product_seller);
         sellDate = (TextView) v.findViewById(R.id.product_date);
-        button_make_offer = (Button) v.findViewById(R.id.offer_button);
         button_message = (Button) v.findViewById(R.id.msg_button);
         button_delete = (Button) v.findViewById(R.id.delete_button);
 
@@ -143,39 +141,6 @@ public class BuyFragment extends Fragment {
                         .addToBackStack(null).commit();
             }
         });
-
-        button_make_offer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Estas seguro de esto?");
-                builder.setMessage("Se enviará una notificación por email con tu email a el vendedor.");
-
-                builder.setPositiveButton("confirmar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        sendEmailToSeller();
-                        sendEmailToBuyer();
-                    }
-                });
-
-                builder.setNegativeButton("cancelar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-
-
-
-                AlertDialog ad = builder.create();
-                ad.show();
-
-
-
-            }
-        });
-
         mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
