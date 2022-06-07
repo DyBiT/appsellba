@@ -66,6 +66,15 @@ public class SellFragment extends Fragment {
         mImageView = v.findViewById(R.id.image_view);
         mProgressBar = v.findViewById(R.id.progress_bar);
         mDescription = v.findViewById(R.id.Description);
+        mDescription.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    mDescription.setHint("");
+                else
+                    mDescription.setHint("Por favor indica al usuario algunas especificaciones,para facilitar la venta, como:\n" +
+                            "Marca, modelo, potencia, uso, etc.");
+            }
+        });
         //Establecemos en el hosting donde se van a guardar en firebase las imagenes.
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         //Establecemos en la base de datos REALTIME donde se van a guardar los datos de la subida.
@@ -77,7 +86,6 @@ public class SellFragment extends Fragment {
                 openFileChooser();
             }
         });
-
         //METODO PARA SUBIR EL PRODUCTO
         mButtonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +104,6 @@ public class SellFragment extends Fragment {
     public void onStart() {
         super.onStart();
     }
-
     //METODO PARA ABRIR LA GALERIA DEL USUARIO Y PUEDA SELECCIONAR LA IMAGEN DESEADA.
     private void openFileChooser() {
         Intent intent = new Intent();
@@ -171,6 +178,12 @@ public class SellFragment extends Fragment {
         if (mEditTextFilePrice.getText().toString().trim().isEmpty()) {
             mEditTextFilePrice.setError("Precio obligatorio");
             mEditTextFilePrice.requestFocus();
+            return;
+        }
+        //VERIFICACIÓN Y MARCAJE DE LA DESCRIPCION DEL PRODUCTO
+        if (mDescription.getText().toString().trim().isEmpty()) {
+            mDescription.setError("Descripción obligatoria");
+            mDescription.requestFocus();
             return;
         }
         //VERIFICACIÓN Y MARCAJE DE LA IMAGEN DEL PRODUCTO
