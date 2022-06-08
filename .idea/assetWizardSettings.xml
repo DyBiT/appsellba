@@ -24,7 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\USER\AppData\Local\Temp\ic_android_black_24dp.xml" />
+                                                <entry key="imagePath" value="C:\Users\guti8\AppData\Local\Temp\ic_android_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -67,7 +67,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="imagePath" value="C:\Users\USER\StudioProjects\02.06\app\src\main\res\drawable\ic_marco_foto_perfil.xml" />
+                                                <entry key="imagePath" value="C:\Users" />
                                                 <entry key="scalingPercent" value="65" />
                                               </map>
                                             </option>
@@ -80,7 +80,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\USER\AppData\Local\Temp\ic_android_black_24dp.xml" />
+                                                <entry key="imagePath" value="C:\Users\guti8\AppData\Local\Temp\ic_android_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -92,7 +92,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\USER" />
+                                                <entry key="imagePath" value="C:\Users" />
                                                 <entry key="scalingPercent" value="90" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
@@ -124,13 +124,6 @@
                                       </entry>
                                     </map>
                                   </option>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="backgroundLayerName" value="ic_marco_foto_perfil" />
-                                      <entry key="previewDensity" value="MEDIUM" />
-                                      <entry key="showGrid" value="true" />
-                                    </map>
-                                  </option>
                                 </PersistentState>
                               </value>
                             </entry>
@@ -145,7 +138,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\USER\AppData\Local\Temp\ic_android_black_24dp.xml" />
+                                                <entry key="imagePath" value="C:\Users\guti8\AppData\Local\Temp\ic_android_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -157,7 +150,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\USER\StudioProjects\02.06\app\src\main\res\drawable\ic_marco_foto_perfil.xml" />
+                                                <entry key="imagePath" value="C:\Users\guti8\Downloads\foto_perfil.svg" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -190,7 +183,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\USER\StudioProjects\02.06\app\src\main\res\drawable\ic_marco_foto_perfil.xml" />
+                                      <entry key="imageAsset" value="C:\Users\guti8\Downloads\foto_perfil.svg" />
                                       <entry key="outputName" value="ic_marco_foto_perfil" />
                                     </map>
                                   </option>
@@ -208,7 +201,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\USER\AppData\Local\Temp\ic_android_black_24dp.xml" />
+                                                <entry key="imagePath" value="C:\Users\guti8\AppData\Local\Temp\ic_android_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -272,7 +265,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="imagePath" value="C:\Users\USER\AppData\Local\Temp\ic_android_black_24dp.xml" />
+                                                <entry key="imagePath" value="C:\Users\guti8\AppData\Local\Temp\ic_android_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -311,12 +304,6 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
-                                    </map>
-                                  </option>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="previewDensity" value="MEDIUM" />
-                                      <entry key="showGrid" value="true" />
                                     </map>
                                   </option>
                                 </PersistentState>
