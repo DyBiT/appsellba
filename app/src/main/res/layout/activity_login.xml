@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_3"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
@@ -17,15 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="230dp"
             android:layout_centerInParent="true"
-            android:background="@drawable/panel_sellba_transparente_1"
+            android:background="@drawable/logo_fondoblanco"
             android:contentDescription="TODO" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_weight="1"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/fondo_3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,6 +52,7 @@
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textColorLink="@color/white"
+                    android:textStyle="bold"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:paddingBottom="15dp" />
@@ -75,6 +75,7 @@
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textColorLink="@color/white"
+                    android:textStyle="bold"
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:paddingBottom="15dp" />
@@ -106,7 +107,10 @@
                 android:text="@string/forgot_pass"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/md_light_blue_900"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                android:textStyle="bold"
                 android:textSize="15sp" />
 
             <TextView
@@ -118,7 +122,10 @@
                 android:text="@string/don_t_have_account_sign_up"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/md_light_blue_900"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                android:textStyle="bold"
                 android:textSize="15sp" />
 
         </LinearLayout>
