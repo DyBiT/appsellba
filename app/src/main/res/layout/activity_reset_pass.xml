@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_3"
     android:orientation="vertical"
     tools:context=".ResetPassActivity">
 
@@ -14,8 +13,8 @@
         android:layout_weight="1">
 
         <ImageView
-            android:layout_width="250dp"
-            android:layout_height="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="235dp"
             android:layout_centerInParent="true"
             android:background="@drawable/logo_fondoblanco"
             android:contentDescription="TODO" />
@@ -23,9 +22,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_weight="1"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/fondo_3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,16 +49,20 @@
                     android:layout_height="wrap_content"
                     android:autofillHints=""
                     android:fontFamily="@font/orbitron"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textColorLink="@color/white"
+                    android:textColorHint="@color/white"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
-                    android:paddingBottom="15dp" />
+                    android:paddingBottom="35dp" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/orbitron"
-                android:textColorHint="@color/colorAccent2"
+                android:textColorHint="@color/white"
                 app:passwordToggleEnabled="true">
 
             </android.support.design.widget.TextInputLayout>
@@ -71,11 +74,14 @@
                 android:layout_gravity="center"
                 android:layout_margin="7dp"
                 android:background="@drawable/rounded_button_transparent"
+                android:backgroundTint="@color/md_light_blue_900"
                 android:elevation="4dp"
                 android:fontFamily="@font/orbitron"
                 android:text="@string/reset_pass"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent2"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
                 android:textStyle="bold"/>
 
             <Button
@@ -84,12 +90,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="7dp"
+                android:backgroundTint="@color/md_light_blue_900"
                 android:background="@drawable/rounded_button_transparent"
                 android:elevation="4dp"
                 android:fontFamily="@font/orbitron"
                 android:text="@string/go_back"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent2"
+                android:textColor="@color/white"
                 android:textStyle="bold"/>
 
 

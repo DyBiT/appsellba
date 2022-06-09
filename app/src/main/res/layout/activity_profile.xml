@@ -9,21 +9,23 @@
 
     <Button
         android:id="@+id/resetPW"
-        android:layout_width="278dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonSave"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="67dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="55dp"
         android:background="@drawable/rounded_button_solid"
-        android:backgroundTint="@color/blackish_blue"
+        android:backgroundTint="@color/md_light_blue_900"
         android:fontFamily="@font/orbitron"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="RESETEAR CONTRASEÑA"
+        android:text="CAMBIAR CONTRASEÑA"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -38,6 +40,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/avatar_perfil"
+        android:backgroundTint="@color/white"
         android:scaleType="centerCrop" />
 
     <TextView
@@ -96,7 +99,7 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textColorLink="@color/white"
-        android:textSize="16dp"
+        android:textSize="14dp"
         android:textStyle="bold" />
 
     <TextView
@@ -105,13 +108,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextDisplayName"
         android:layout_alignBottom="@+id/text_view_email"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="18dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginBottom="0dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="-31dp"
         android:fontFamily="@font/oxanium"
         android:shadowColor="#3322"
-        android:text="verificado"
+        android:text="VERIFICADO"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textColorLink="@color/white"
@@ -125,10 +128,10 @@
         android:layout_below="@+id/text_view_email"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="67dp"
         android:background="@drawable/rounded_button_solid"
-        android:backgroundTint="@color/blackish_blue"
+        android:backgroundTint="@color/md_light_blue_900"
         android:fontFamily="@font/orbitron"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"

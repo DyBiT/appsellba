@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_3"
     android:fillViewport="true"
     tools:context=".SellFragment">
 
@@ -11,13 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="14dp"
+        android:layout_marginTop="20dp">
 
         <ImageButton
             android:id="@+id/imageButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_media_play" />
+            android:backgroundTint="@color/md_light_blue_900"
+            app:srcCompat="@drawable/ic_chat_24dp" />
 
         <TextView
             android:id="@+id/Product_tag"
@@ -27,6 +30,9 @@
             android:layout_toEndOf="@+id/imageButton5"
             android:text="@string/product_name"
             android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textColorHint="@color/white"
             android:textStyle="bold" />
 
         <EditText
@@ -34,10 +40,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Product_tag"
-            android:layout_marginStart="65dp"
-            android:hint="Introduzca el nombre del producto"
+            android:layout_marginStart="55dp"
+            android:hint="Introduzca un nombre"
             android:maxLength="55"
             android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textColorHint="@color/white"
             android:singleLine="true" />
 
         <ImageButton
@@ -45,7 +54,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_text_file_name"
-            app:srcCompat="@android:drawable/ic_menu_camera" />
+            android:backgroundTint="@color/md_light_blue_900"
+            app:srcCompat="@drawable/ic_stay_primary_landscape_black_24dp" />
 
         <TextView
             android:id="@+id/Image_tag"
@@ -53,9 +63,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_text_file_name"
             android:layout_marginLeft="65dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="Selecciona una imagen "
-            android:textSize="25dp"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textColorHint="@color/white"
             android:textStyle="bold" />
 
         <Button
@@ -63,10 +76,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Image_tag"
-            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/rounded_button_transparent"
+            android:backgroundTint="@color/md_light_blue_900"
+            android:elevation="4dp"
+            android:fontFamily="@font/orbitron"
+            android:text="Selecciona una imagen"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
 
-
-            android:text="Selecciona una imagen" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/image_view"
@@ -82,7 +103,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/image_view"
-            app:srcCompat="@drawable/ic_rupee" />
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/md_light_blue_900"
+            app:srcCompat="@drawable/ic_money" />
 
         <TextView
             android:id="@+id/Price_tag"
@@ -90,10 +113,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/image_view"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="25dp"
             android:layout_toEndOf="@id/rupee_button"
             android:text="Precio producto"
-            android:textSize="25dp"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textColorHint="@color/white"
             android:textStyle="bold" />
 
         <EditText
@@ -102,20 +128,37 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/Price_tag"
             android:layout_marginStart="60dp"
-            android:hint="Introduzca Precio"
+            android:layout_marginTop="0dp"
+            android:hint="Introduzca un precio"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textColorHint="@color/white"
             android:inputType="number"
             android:maxLength="4"
             android:maxLines="1" />
+
+        <ImageButton
+            android:id="@+id/description_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_text_file_price"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/md_light_blue_900"
+            app:srcCompat="@drawable/ic_add_dark" />
 
         <TextView
             android:id="@+id/Description_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_text_file_price"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="23dp"
+            android:layout_toEndOf="@id/description_button"
             android:text="Descripción"
             android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textColorHint="@color/white"
             android:textStyle="bold" />
 
         <EditText
@@ -124,12 +167,15 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/Description_tag"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="-3dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16dp"
+            android:hint="Por favor indica al usuario algunas especificaciones,para facilitar la venta, como: marca, modelo, potencia, uso, etc."
             android:lines="2"
-            android:maxLength="400"
-            android:hint="Por favor indica al usuario algunas especificaciones,para facilitar la venta, como:
-        Marca, modelo, potencia, uso, etc."/>
+            android:maxLength="400" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -143,12 +189,22 @@
 
         <Button
             android:id="@+id/button_upload"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/progress_bar"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="7dp"
+            android:background="@drawable/rounded_button_transparent"
+            android:backgroundTint="@color/md_light_blue_900"
+            android:elevation="4dp"
+            android:fontFamily="@font/orbitron"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="Subir" />
+            android:text="VENDER" />
 
 
     </RelativeLayout>

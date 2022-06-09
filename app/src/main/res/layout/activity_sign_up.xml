@@ -13,7 +13,7 @@
         android:layout_weight="1">
 
         <ImageView
-            android:layout_width="228dp"
+            android:layout_width="wrap_content"
             android:layout_height="235dp"
             android:layout_centerInParent="true"
             android:background="@drawable/logo_fondoblanco" />
@@ -23,9 +23,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_weight="1"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/fondo_3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,8 +39,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:textColorHint="@color/colorAccent2"
+                android:textColorHint="@color/white"
                 android:focusable="true"
                 android:focusableInTouchMode="true">
 
@@ -48,6 +47,10 @@
                     android:id="@+id/editTextEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textColorLink="@color/white"
+                    android:textStyle="bold"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:paddingBottom="15dp" />
@@ -60,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:textColorHint="@color/colorAccent2"
+                android:textColorHint="@color/white"
                 app:passwordToggleEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
@@ -68,6 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/password"
+                    android:textStyle="bold"
                     android:inputType="textPassword"
                     android:paddingBottom="15dp" />
 
@@ -80,19 +84,24 @@
                 android:layout_gravity="center"
                 android:layout_margin="7dp"
                 android:background="@drawable/rounded_button_transparent"
-                android:text="Registrar"
+                android:backgroundTint="@color/md_light_blue_900"
+                android:text="REGISTRAR"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent2" />
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="¿Ya tienes una cuenta? Accede"
+                android:text="¿Ya tienes cuenta?\n Accede"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/colorAccent2" />
+                android:textColor="@color/white" />
 
 
         </LinearLayout>

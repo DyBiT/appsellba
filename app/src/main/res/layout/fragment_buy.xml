@@ -62,7 +62,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="Precio"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -81,7 +81,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
                 android:text="Nombre vendedor | "
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -95,7 +97,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@+id/product_seller_tag"
-                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
                 android:text="Vendedor"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -108,10 +112,10 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
+                android:text="Fecha de subida | "
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textColorLink="@color/white"
-                android:text="Fecha de subida | "
                 android:textSize="15dp"
 
                 android:textStyle="bold" />
@@ -125,10 +129,10 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@+id/product_seller_tag"
+                android:text="Date"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textColorLink="@color/white"
-                android:text="Date"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -190,7 +194,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="58dp"
         android:layout_marginEnd="58dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_button_transparent"
         android:backgroundTint="@color/md_light_blue_900"
         android:duplicateParentState="true"
