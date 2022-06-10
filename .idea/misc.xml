@@ -3,57 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/activity_drawer.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/activity_msg.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/activity_profile.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/activity_reset_pass.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/activity_sign_up.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/activity_splash_screen.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/fragment_about.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/fragment_buy.xml" value="0.16983695652173914" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/fragment_feedback.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/fragment_sell.xml" value="0.16983695652173914" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/image_item.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/layout/nav_header.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/menu/menu.xml" value="0.2046875" />
-        <entry key="..\:/Users/USER/StudioProjects/02.06/app/src/main/res/menu/nav_menu.xml" value="0.2046875" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/drawable/ic_battery_charging.xml" value="0.35" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/drawable/ic_marco_foto_perfil.xml" value="0.35" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/drawable/ic_solar_panel.xml" value="0.35" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/drawable/rounded_button_solid.xml" value="0.35" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/drawable/rounded_button_transparent.xml" value="0.35" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/drawable/splash_screen.xml" value="0.35" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/font/.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_drawer.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_login.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_main.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_msg.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_profile.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_reset_pass.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_sign_up.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_splash_screen.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_welcome.xml" value="0.16979166666666667" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/compra_slider.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/fragment_about.xml" value="0.33" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/fragment_buy.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/fragment_feedback.xml" value="0.33" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/fragment_home.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/fragment_sell.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/image_item.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/info_slider.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/nav_header.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/venta_slider.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/welcome_slider.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/menu/menu.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/menu/nav_menu.xml" value="0.3484375" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/mipmap-anydpi-v26/ic_app_icon.xml" value="0.22" />
-        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/mipmap-anydpi-v26/ic_app_icon_round.xml" value="0.22" />
-        <entry key="..\:/Users/jotaf/AndroidStudioProjects/appsellba123/app/src/main/res/layout/activity_drawer.xml" value="0.1703125" />
-        <entry key="..\:/Users/jotaf/AndroidStudioProjects/appsellba123/app/src/main/res/layout/activity_login.xml" value="0.1703125" />
-        <entry key="..\:/Users/jotaf/AndroidStudioProjects/appsellba123/app/src/main/res/layout/activity_sign_up.xml" value="0.1703125" />
-        <entry key="..\:/Users/jotaf/AndroidStudioProjects/appsellba123/app/src/main/res/layout/activity_welcome.xml" value="0.1703125" />
+        <entry key="..\:/Users/DAVID/StudioProjects/appsellba/app/src/main/res/layout/activity_drawer.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/DAVID/StudioProjects/appsellba/app/src/main/res/layout/activity_login.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/DAVID/StudioProjects/appsellba/app/src/main/res/layout/fragment_about.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/DAVID/StudioProjects/appsellba/app/src/main/res/layout/fragment_feedback.xml" value="0.1" />
+        <entry key="..\:/Users/DAVID/StudioProjects/appsellba/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/UsuarioPC/AndroidStudioProjects/appsellba/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/guti8/appsellba/app/src/main/res/layout/activity_main.xml" value="0.334375" />
+        <entry key="..\:/Users/jotaf/AndroidStudioProjects/appsellba/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
