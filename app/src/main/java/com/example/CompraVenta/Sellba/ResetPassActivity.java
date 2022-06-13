@@ -43,7 +43,7 @@ public class ResetPassActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.textViewBack).setOnClickListener(this);
 
     }
-    //COMPROVACIÓN DEL EMAIL.
+    //COMPROBACIÓN DEL EMAIL.
     private void passReset(){
         mEmail = editTextEmail.getText().toString().trim();
         if(mEmail.isEmpty()){
@@ -51,7 +51,7 @@ public class ResetPassActivity extends AppCompatActivity implements View.OnClick
             editTextEmail.requestFocus();
             return;
         }
-        //COMPROVACIÓN DE LA CONTRASEÑA
+        //COMPROBACIÓN DE LA CONTRASEÑA
         if(!Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()){
             editTextEmail.setError("Introduzca unn email válido");
             editTextEmail.requestFocus();
@@ -103,5 +103,11 @@ public class ResetPassActivity extends AppCompatActivity implements View.OnClick
 
         }
 
+    }
+    public void onBackPressed() {
+        Intent intentLogin = new Intent(this, LoginActivity.class);
+        intentLogin.addFlags(intentLogin.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intentLogin);
+        finish();
     }
 }

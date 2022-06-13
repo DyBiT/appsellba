@@ -44,7 +44,7 @@ public class FeedbackFragment extends Fragment implements View.OnClickListener {
         SendMail sm = new SendMail(getActivity(), email, subject, message);
         sm.execute();
     }
-    //COMPROVAMOS QUE EL MENSAJE NO ESTÉ VACIO.
+    //COMPROBAMOS QUE EL MENSAJE NO ESTÉ VACIO.
     @Override
     public void onClick(View v) {
         if(editTextMessage.getText().toString().length() < 1){

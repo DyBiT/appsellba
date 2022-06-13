@@ -42,8 +42,6 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
@@ -59,12 +57,8 @@ public class WelcomeActivity extends AppCompatActivity {
                 R.layout.welcome_slider,
                 R.layout.compra_slider,};
 
-        // adding bottom dots
         addBottomDots(0);
-
-        // making notification bar transparent
         changeStatusBarColor();
-
         myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
@@ -79,11 +73,8 @@ public class WelcomeActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // checking for last page
-                // if last page home screen will be launched
                 int current = getItem(+1);
                 if (current < layouts.length) {
-                    // move to next screen
                     viewPager.setCurrentItem(current);
                 } else {
                     launchHomeScreen();
@@ -120,20 +111,15 @@ public class WelcomeActivity extends AppCompatActivity {
         finish();
     }
 
-    //	viewpager change listener
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
         @Override
         public void onPageSelected(int position) {
             addBottomDots(position);
-
-            // changing the next button text 'NEXT' / 'GOT IT'
             if (position == layouts.length - 1) {
-                // last page. make button text to GOT IT
                 btnNext.setText(getString(R.string.start));
                 btnSkip.setVisibility(View.GONE);
             } else {
-                // still pages are left
                 btnNext.setText(getString(R.string.next));
                 btnSkip.setVisibility(View.VISIBLE);
             }
@@ -149,10 +135,6 @@ public class WelcomeActivity extends AppCompatActivity {
 
         }
     };
-
-    /**
-     * Making notification bar transparent
-     */
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -160,10 +142,6 @@ public class WelcomeActivity extends AppCompatActivity {
             window.setStatusBarColor(Color.TRANSPARENT);
         }
     }
-
-    /**
-     * View pager adapter
-     */
     public class MyViewPagerAdapter extends PagerAdapter {
         private LayoutInflater layoutInflater;
 
@@ -196,5 +174,8 @@ public class WelcomeActivity extends AppCompatActivity {
             View view = (View) object;
             container.removeView(view);
         }
+    }
+    public void onBackPressed() {
+        //super.onBackPressed();
     }
 }

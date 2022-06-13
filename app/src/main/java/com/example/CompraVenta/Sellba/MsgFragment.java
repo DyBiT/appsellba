@@ -114,8 +114,6 @@ public class MsgFragment extends Fragment implements View.OnClickListener {
         String subject = "[SELLBA] Confirmación" + pName;
         String thankMsg = "\n\n Gracias por usar SELLBA :)";
         String autoMsg = "\n\n Esto es un Email autogenerado por SELLBA. Por favor no responda este mensaje.";
-
-        //String message = "Hola " + bName + ".\nSu petición de contacto con " + sName  +" para el producto \"" + pName + "\". Puedes enviar un mensaje a " + sName + " en la app clickeando en la opción mensaje." + thankMsg + autoMsg ;
         String message = "Hola " + bName + ".\nSu petición de contacto con " + sName  +" para el producto \"" + pName + "\". Se ha registrado correctamente, espera futuros mensajes de "+sName + thankMsg + autoMsg ;
         SendMail sm2b = new SendMail(getActivity(), email, subject, message);
         sm2b.execute();

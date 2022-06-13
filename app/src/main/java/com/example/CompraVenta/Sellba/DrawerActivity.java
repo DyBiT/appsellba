@@ -33,7 +33,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new HomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new HomeFragment()).addToBackStack(null).commit();
     }
 
     //PARA NAVEGAR POR EL MENU HEMOS DECIDIDO CREAR UN SWITCH QUE INTERECTAU EN UN MENU(NAV_MENU.XML)
@@ -43,15 +43,15 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new HomeFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new HomeFragment()).addToBackStack(null).commit();
                 break;
 
             case R.id.nav_my_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new ProfileFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new ProfileFragment()).addToBackStack(null).commit();
                 break;
 
             case R.id.nav_sell:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new SellFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new SellFragment()).addToBackStack(null).commit();
                 break;
             //EN EL CASO DE DESCONECTAR CERRAREMOS LA INSTANCIA DEL USUARIO MEDIANTE FIREBASE:
             case R.id.nav_logout:
@@ -65,7 +65,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
                 break;
 
             case R.id.nav_feedback:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new FeedbackFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new FeedbackFragment()).addToBackStack(null).commit();
                 break;
 
 

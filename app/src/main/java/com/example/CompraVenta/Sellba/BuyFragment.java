@@ -210,33 +210,4 @@ public class BuyFragment extends Fragment {
             }
         });
     }
-    //Método para enviar mensaje al vendedor , le pasamos los párametros requeridos por la clase SendMail.
-    private void sendEmailToSeller() {
-        String email = sEmail;
-        String subject = "[SELLBA] Petición de producto " + pName;
-
-        String msg = "nombre-desconocido";
-        if (bName != "")
-            msg = bName;
-        String thankMsg = "\n\nGracias por usar SELLBA :)";
-        String autoMsg = "\n\nEsto es un Email autogenerado por SELLBA. Por favor no responda este mensaje.";
-
-        String message = "Hola " + sName + ". " + msg + " está interesado en su producto \"" + pName + "\". Espera más respuestas de " + msg + ". Si quieres puedes escribir " + msg + " en el email " + bEmail + " ." + thankMsg + autoMsg;
-        SendMail sm2s = new SendMail(getActivity(), email, subject, message);
-        sm2s.execute();
-    }
-    //Método para enviar mensaje al comprador , le pasamos los párametros requeridos por la clase SendMail.
-    private void sendEmailToBuyer() {
-        String email = bEmail;
-        String subject = "[SELLBA] Confirmación" + pName;
-        String thankMsg = "\n\n Gracias por usar SELLBA :)";
-        String autoMsg = "\n\n Esto es un Email autogenerado por SELLBA. Por favor no responda este mensaje.";
-
-        //String message = "Hola " + bName + ".\nSu petición de contacto con " + sName  +" para el producto \"" + pName + "\". Puedes enviar un mensaje a " + sName + " en la app clickeando en la opción mensaje." + thankMsg + autoMsg ;
-        String message = "Hola " + bName + ".\nSu petición de contacto con " + sName  +" para el producto \"" + pName + "\". Se ha registrado correctamente, espera futuros mensajes de "+sName + thankMsg + autoMsg ;
-        SendMail sm2b = new SendMail(getActivity(), email, subject, message);
-        sm2b.execute();
-    }
-
-
 }

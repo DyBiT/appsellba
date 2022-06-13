@@ -38,7 +38,6 @@ import static android.app.Activity.RESULT_OK;
 public class SellFragment extends Fragment {
 
     private static final int PICK_IMAGE_REQUEST = 1;
-    private static final int PICK_CAMERA_REQUEST = 0;
 
     private Button mButtonChooseImage;
     private Button mButtonUpload;
@@ -122,31 +121,9 @@ public class SellFragment extends Fragment {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
             mImageUri = data.getData();
-            //cropImage();
             Picasso.with(getActivity()).load(mImageUri).into(mImageView);
         }
     }
-
-    /*Testing para subir una imagen desde la camara
-    private void cropImage() {
-        try {
-            Intent cropIntent;
-            cropIntent = new Intent("com.android.camera.action.CROP");
-            cropIntent.setDataAndType(mImageUri, "image/*");
-            cropIntent.putExtra("crop", " true");
-            cropIntent.putExtra("outputx", 180);
-            cropIntent.putExtra("outputY", 180);
-            cropIntent.putExtra("aspectx", 3);
-            cropIntent.putExtra("aspecty", 4);
-            cropIntent.putExtra("scaleUpIfNeeded", true);
-            cropIntent.putExtra("return-data ", true);
-            startActivityForResult(cropIntent, 1);
-        } catch (ActivityNotFoundException e) {
-            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-     */
 
     //METODO PARA OBTENER LA EXTENSION DE LA IMAGEN Y POSTERIOR SELECCIONAR SOLO IMG'S
     private String getFileExtension(Uri uri) {

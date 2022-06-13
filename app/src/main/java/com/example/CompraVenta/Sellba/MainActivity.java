@@ -21,4 +21,7 @@ public class MainActivity extends AppCompatActivity {
         },5000);
 
     }
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
 }
